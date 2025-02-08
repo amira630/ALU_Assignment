@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALU Verification Assignment</title>
+  <!-- <title>ALU Verification Assignment</title>
   <style>
     h1 {
       border-bottom: none;
     }
   </style>
-</head>
+</head> -->
 <body>
 
 <img src="siemens_eda_logo.jpg" alt="Description" width="100" style="float: right; margin-left: 10px;">
