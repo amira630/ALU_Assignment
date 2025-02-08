@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <title>ALU Verification Assignment</title>
+  <title>ALU Verification Assignment</title>
   <style>
     h1 {
       border-bottom: none;
     }
+    .header-container {
+      display: flex;
+      align-items: center;
+    }
+    .header-container img {
+      margin-right: 10px; /* Add space between the logo and heading */
+    }
   </style>
-</head> -->
+</head>
 <body>
 
-<img src="siemens_eda_logo.jpg" alt="Description" width="100" style="float: right; margin-left: 10px;">
-
-<h1>ALU Verification Assignment</h1>
-<h3>Submitted to: Eng. Nour ElDeen ElHout</h3>
-<h4>By: Amira Atef, Aya El Desouky and Mohamed Ayman</h4>
-<hr>
-<h4>Table of Contents</h4>
+<div class="header-container">
+  <img src="siemens_eda_logo.jpg" alt="Description" width="100">
+  <div>
+    <h1>ALU Verification Assignment</h1>
+    <h3>Submitted to: Eng. Nour ElDeen ElHout</h3>
+    <h4>By: Amira Atef, Aya El Desouky and Mohamed Ayman</h4>
+    <hr>
+  </div>
+</div>
+    <h4>Table of Contents
+</h4>
 </body>
 </html>
 
