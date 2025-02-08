@@ -31,9 +31,9 @@ always @(posedge clk or negedge reset) begin
     else begin 
         valid_out <= valid_r;
         if(valid_in) begin
-            alu <= out_r[3:0];
+            alu   <= out_r[3:0];
             carry <= out_r[4];
-            zero <= zero_r;
+            zero  <= zero_r;
         end
     end
 end
@@ -42,22 +42,8 @@ always @(*) begin
     valid_r = valid_in;
     case (opcode)
         SEL:      out_r = b;
-        INC:begin
-            if (b == 4'hF) begin
-                out_r = b;
-                valid_r = 1'b0;
-            end
-            else 
-                out_r = b + 1; 
-        end
-        DEC: begin
-            if (b == 0) begin
-                out_r = b;
-                valid_r = 1'b0;
-            end
-            else 
-                out_r = b - 1; 
-        end
+        INC:      out_r = b + 1; 
+        DEC:      out_r = b - 1; 
         ADD:      out_r = a + b;
         ADD_c:    out_r = a + b + cin;
         SUB:      out_r = a - b;
@@ -69,7 +55,7 @@ always @(*) begin
         SHIFT_R:  out_r = {1'b0, out_r[4:1]};
         ROTATE_L: out_r = {out_r[3:0], out_r[4]};
         ROTATE_R: out_r = {out_r[0], out_r[4:1]};
-        default: valid_r = 1'b0;
+        default:  valid_r = 1'b0;
     endcase
     if (~&out_r) 
         zero_r = 1'b1;
