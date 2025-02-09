@@ -1,20 +1,23 @@
-D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv {2 {vlog -work work -vopt -sv -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv
+C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_ref.sv {2 {vlog -work work -vopt -sv -stats=none C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_ref.sv
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-** Warning: D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv(1): (vlog-13233) Design unit "alu_ref_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+** Warning: C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_ref.sv(1): (vlog-13233) Design unit "alu_ref_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
 -- Compiling package alu_ref_sv_unit
 -- Compiling module alu_ref
 
 Top level modules:
 	alu_ref
 
-} {} {}} D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_pkg.sv {1 {vlog -work work -vopt -sv -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_pkg.sv
+} {} {}} C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_tb.sv {2 {vlog -work work -vopt -sv -stats=none C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_tb.sv
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling package alu_pkg
+** Warning: C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu_tb.sv(2): (vlog-13233) Design unit "alu_tb_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+-- Compiling package alu_tb_sv_unit
+-- Importing package alu_pkg
+-- Compiling module alu_tb
 
 Top level modules:
-	--none--
+	alu_tb
 
-} {} {}} D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu.v {1 {vlog -work work -vopt -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu.v
+} {} {}} C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu.v {1 {vlog -work work -vopt -stats=none C:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment/alu.v
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 -- Compiling module alu
 

@@ -42,8 +42,8 @@ always @(*) begin
     valid_r = valid_in;
     case (opcode)
         SEL:      out_r = b;
-        INC:      out_r = b + 1; 
-        DEC:      out_r = b - 1; 
+        INC:      begin if (b < 4'hf) out_r = b + 1; else out_r = 4'hf; end
+        DEC:      begin if (b > 0) out_r = b - 1; else out_r = 0; end
         ADD:      out_r = a + b;
         ADD_c:    out_r = a + b + cin;
         SUB:      out_r = a - b;

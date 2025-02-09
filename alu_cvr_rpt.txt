@@ -7,7 +7,7 @@ Coverage Report by instance with details
 Branch Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Branches                        22        18         4    81.81%
+    Branches                        22        22         0   100.00%
 
 ================================Branch Details================================
 
@@ -17,42 +17,42 @@ Branch Coverage for instance /alu_tb/DUT
     ----         ----                      -----     ------ 
   File alu.v
 ------------------------------------IF Branch------------------------------------
-    23                                       338     Count coming in to IF
-    23              1                         73     if(reset == 0) begin
-    30              1                        265     else begin
+    23                                      1015     Count coming in to IF
+    23              1                         24     if(reset == 0) begin
+    30              1                        991     else begin
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    32                                       265     Count coming in to IF
-    32              1                         25     if(ctl == 4'b1001) begin       
-    35              1                         32     else if(ctl == 4'b0110) begin  
-    38              1                        208     else begin
+    32                                       991     Count coming in to IF
+    32              1                         60     if(ctl == 4'b1001) begin       
+    35              1                         63     else if(ctl == 4'b0110) begin  
+    38              1                        868     else begin
 Branch totals: 3 hits of 3 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    41                                       265     Count coming in to IF
-    41              1                        262     if(valid_in) begin
-                                               3     All False Count
+    41                                       991     Count coming in to IF
+    41              1                        990     if(valid_in) begin
+                                               1     All False Count
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------CASE Branch------------------------------------
-    52                                       302     Count coming in to CASE
-    53              1                         34     4'b0000: alu_out=a;                                
-    54              1                         25     4'b0001: alu_out=b+4'b0001 ;                        
-    55              1                         21     4'b0010: alu_out=b-4'b0001 ;                        
-    56              1                         34     4'b0011: alu_out=a+b;                              
-    57              1                         36     4'b0100: alu_out=a+b+cin;                           
-    58              1                         25     4'b0101: alu_out=a-b+1 ;                            
-    59              1                         36     4'b0110: alu_out=a-b+(~cin);                       
-    60              1                         24     4'b0111: alu_out=a&b;                              
-    61              1                         33     4'b1000: alu_out=a|b;                              
-    62              1                         33     4'b1001: alu_out=a^b;                              
-    63              1                    ***0***     4'b1010: alu_out={b[3:0],1'b1};                    
-    64              1                    ***0***     4'b1011: alu_out={b[0],1'b0,b[3:1]};                
-    65              1                    ***0***     4'b1100: alu_out={b[3:0],cin};                     
-    66              1                    ***0***     4'b1101: alu_out={b[0],cin,b[3:1]};                
-    67              1                          1     default : begin 
-Branch totals: 11 hits of 15 branches = 73.33%
+    52                                      1002     Count coming in to CASE
+    53              1                         64     4'b0000: alu_out=a;                                
+    54              1                         62     4'b0001: alu_out=b+4'b0001 ;                        
+    55              1                         63     4'b0010: alu_out=b-4'b0001 ;                        
+    56              1                         62     4'b0011: alu_out=a+b;                              
+    57              1                         62     4'b0100: alu_out=a+b+cin;                           
+    58              1                         63     4'b0101: alu_out=a-b+1 ;                            
+    59              1                         63     4'b0110: alu_out=a-b+(~cin);                       
+    60              1                         62     4'b0111: alu_out=a&b;                              
+    61              1                         63     4'b1000: alu_out=a|b;                              
+    62              1                         62     4'b1001: alu_out=a^b;                              
+    63              1                         63     4'b1010: alu_out={b[3:0],1'b1};                    
+    64              1                         62     4'b1011: alu_out={b[0],1'b0,b[3:1]};                
+    65              1                         62     4'b1100: alu_out={b[3:0],cin};                     
+    66              1                         63     4'b1101: alu_out={b[0],cin,b[3:1]};                
+    67              1                        126     default : begin 
+Branch totals: 15 hits of 15 branches = 100.00%
 
 
 Condition Coverage:
@@ -128,7 +128,7 @@ Expression totals: 4 of 4 input terms covered = 100.00%
 Statement Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Statements                      32        28         4    87.50%
+    Statements                      32        32         0   100.00%
 
 ================================Statement Details================================
 
@@ -156,31 +156,31 @@ Statement Coverage for instance /alu_tb/DUT --
     17                                               wire [4:0] result; 
     18                                               wire       zero_result;
     19                                               reg valid_out_R;
-    20              1                        302     assign result = alu_out(a,b,cin,ctl); 
-    21              1                        287     assign zero_result = z_flag(result); 
-    22              1                        338     always@(posedge clk, negedge reset) begin
+    20              1                       1002     assign result = alu_out(a,b,cin,ctl); 
+    21              1                        967     assign zero_result = z_flag(result); 
+    22              1                       1015     always@(posedge clk, negedge reset) begin
     23                                               if(reset == 0) begin
-    24              1                         73     valid_out_R <= 0;
-    25              1                         73     valid_out   <= 0;
-    26              1                         73     alu         <= 0;
-    27              1                         73     carry       <= 0; 
-    28              1                         73     zero        <= 0;
+    24              1                         24     valid_out_R <= 0;
+    25              1                         24     valid_out   <= 0;
+    26              1                         24     alu         <= 0;
+    27              1                         24     carry       <= 0; 
+    28              1                         24     zero        <= 0;
     29                                               end
     30                                               else begin
-    31              1                        265     valid_out_R <= valid_in;
+    31              1                        991     valid_out_R <= valid_in;
     32                                               if(ctl == 4'b1001) begin       
-    33              1                         25     valid_out <= ~valid_in;
+    33              1                         60     valid_out <= ~valid_in;
     34                                               end
     35                                               else if(ctl == 4'b0110) begin  
-    36              1                         32     valid_out <= valid_out_R;
+    36              1                         63     valid_out <= valid_out_R;
     37                                               end
     38                                               else begin
-    39              1                        208     valid_out <= valid_in;
+    39              1                        868     valid_out <= valid_in;
     40                                               end
     41                                               if(valid_in) begin
-    42              1                        262     alu   <= result[3:0]; 
-    43              1                        262     carry <= result[4]; 
-    44              1                        262     zero  <= zero_result; 
+    42              1                        990     alu   <= result[3:0]; 
+    43              1                        990     carry <= result[4]; 
+    44              1                        990     zero  <= zero_result; 
     45                                               end
     46                                               end
     47                                               end
@@ -189,35 +189,35 @@ Statement Coverage for instance /alu_tb/DUT --
     50                                               input cin ; 
     51                                               input [3:0] ctl ; 
     52                                               case ( ctl ) 
-    53              1                         34     4'b0000: alu_out=a;                                
-    54              1                         25     4'b0001: alu_out=b+4'b0001 ;                        
-    55              1                         21     4'b0010: alu_out=b-4'b0001 ;                        
-    56              1                         34     4'b0011: alu_out=a+b;                              
-    57              1                         36     4'b0100: alu_out=a+b+cin;                           
-    58              1                         25     4'b0101: alu_out=a-b+1 ;                            
-    59              1                         36     4'b0110: alu_out=a-b+(~cin);                       
-    60              1                         24     4'b0111: alu_out=a&b;                              
-    61              1                         33     4'b1000: alu_out=a|b;                              
-    62              1                         33     4'b1001: alu_out=a^b;                              
-    63              1                    ***0***     4'b1010: alu_out={b[3:0],1'b1};                    
-    64              1                    ***0***     4'b1011: alu_out={b[0],1'b0,b[3:1]};                
-    65              1                    ***0***     4'b1100: alu_out={b[3:0],cin};                     
-    66              1                    ***0***     4'b1101: alu_out={b[0],cin,b[3:1]};                
+    53              1                         64     4'b0000: alu_out=a;                                
+    54              1                         62     4'b0001: alu_out=b+4'b0001 ;                        
+    55              1                         63     4'b0010: alu_out=b-4'b0001 ;                        
+    56              1                         62     4'b0011: alu_out=a+b;                              
+    57              1                         62     4'b0100: alu_out=a+b+cin;                           
+    58              1                         63     4'b0101: alu_out=a-b+1 ;                            
+    59              1                         63     4'b0110: alu_out=a-b+(~cin);                       
+    60              1                         62     4'b0111: alu_out=a&b;                              
+    61              1                         63     4'b1000: alu_out=a|b;                              
+    62              1                         62     4'b1001: alu_out=a^b;                              
+    63              1                         63     4'b1010: alu_out={b[3:0],1'b1};                    
+    64              1                         62     4'b1011: alu_out={b[0],1'b0,b[3:1]};                
+    65              1                         62     4'b1100: alu_out={b[3:0],cin};                     
+    66              1                         63     4'b1101: alu_out={b[0],cin,b[3:1]};                
     67                                               default : begin 
-    68              1                          1     alu_out=9'bxxxxxxxxx; 
-    69              1                          1     $display("Illegal CTL detected!!"); 
+    68              1                        126     alu_out=9'bxxxxxxxxx; 
+    69              1                        126     $display("Illegal CTL detected!!"); 
     70                                               end 
     71                                               endcase 
     72                                               endfunction  
     73                                               function z_flag ; 
     74                                               input [4:0] a4 ; 
     75                                               begin 
-    76              1                        287     z_flag = ^(a4[0]|a4[1]|a4[2]|a4[3]) ; 
+    76              1                        967     z_flag = ^(a4[0]|a4[1]|a4[2]|a4[3]) ; 
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Toggles                         60        60         0   100.00%
+    Toggles                         60        59         1    98.33%
 
 ================================Toggle Details================================
 
@@ -234,17 +234,17 @@ Toggle Coverage for instance /alu_tb/DUT --
                                           ctl[0-3]           1           1                              100.00 
                                              reset           1           1                              100.00 
                                        result[0-4]           1           1                              100.00 
-                                          valid_in           1           1                              100.00 
+                                          valid_in           0           1                               50.00 
                                          valid_out           1           1                              100.00 
                                        valid_out_R           1           1                              100.00 
                                               zero           1           1                              100.00 
                                        zero_result           1           1                              100.00 
 
 Total Node Count     =         30 
-Toggled Node Count   =         30 
-Untoggled Node Count =          0 
+Toggled Node Count   =         29 
+Untoggled Node Count =          1 
 
-Toggle Coverage      =     100.00% (60 of 60 bins)
+Toggle Coverage      =      98.33% (59 of 60 bins)
 
 =================================================================================
 === Instance: /alu_tb/DUT_G
@@ -253,7 +253,7 @@ Toggle Coverage      =     100.00% (60 of 60 bins)
 Branch Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Branches                        21        16         5    76.19%
+    Branches                        25        25         0   100.00%
 
 ================================Branch Details================================
 
@@ -263,47 +263,96 @@ Branch Coverage for instance /alu_tb/DUT_G
     ----         ----                      -----     ------ 
   File alu_ref.sv
 ------------------------------------IF Branch------------------------------------
-    25                                       337     Count coming in to IF
-    25              1                         73         if(~reset) begin
-    31              1                        264         else begin 
+    25                                      1003     Count coming in to IF
+    25              1                         24         if(~reset) begin
+    31              1                        979         else begin 
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    33                                       264     Count coming in to IF
-    33              1                        261             if(valid_in) begin
-                                               3     All False Count
+    33                                       979     Count coming in to IF
+    33              1                        978             if(valid_in) begin
+                                               1     All False Count
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------CASE Branch------------------------------------
-    43                                       301     Count coming in to CASE
-    44              1                         34             SEL:      out_r = b;
-    45              1                         25             INC:      out_r = b + 1; 
-    46              1                         21             DEC:      out_r = b - 1; 
-    47              1                         34             ADD:      out_r = a + b;
-    48              1                         36             ADD_c:    out_r = a + b + cin;
-    49              1                         25             SUB:      out_r = a - b;
-    50              1                         36             SUB_b:    out_r = a - b - cin;
-    51              1                         24             AND:      out_r = a & b; 
-    52              1                         33             OR:       out_r = a | b;
-    53              1                         33             XOR:      out_r = a ^ b;
-    54              1                    ***0***             SHIFT_L:  out_r = {out_r[3:0], 1'b0};
-    55              1                    ***0***             SHIFT_R:  out_r = {1'b0, out_r[4:1]};
-    56              1                    ***0***             ROTATE_L: out_r = {out_r[3:0], out_r[4]};
-    57              1                    ***0***             ROTATE_R: out_r = {out_r[0], out_r[4:1]};
-    58              1                    ***0***             default:  valid_r = 1'b0;
-Branch totals: 10 hits of 15 branches = 66.66%
+    43                                      1001     Count coming in to CASE
+    44              1                         64             SEL:      out_r = b;
+    45              1                         62             INC:      begin if (b < 4'hf) out_r = b + 1; else out_r = 4'hf; end
+    46              1                         63             DEC:      begin if (b > 0) out_r = b - 1; else out_r = 0; end
+    47              1                         62             ADD:      out_r = a + b;
+    48              1                         62             ADD_c:    out_r = a + b + cin;
+    49              1                         63             SUB:      out_r = a - b;
+    50              1                         63             SUB_b:    out_r = a - b - cin;
+    51              1                         62             AND:      out_r = a & b; 
+    52              1                         63             OR:       out_r = a | b;
+    53              1                         62             XOR:      out_r = a ^ b;
+    54              1                         63             SHIFT_L:  out_r = {out_r[3:0], 1'b0};
+    55              1                         62             SHIFT_R:  out_r = {1'b0, out_r[4:1]};
+    56              1                         62             ROTATE_L: out_r = {out_r[3:0], out_r[4]};
+    57              1                         63             ROTATE_R: out_r = {out_r[0], out_r[4:1]};
+    58              1                        125             default:  valid_r = 1'b0;
+Branch totals: 15 hits of 15 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    60                                       301     Count coming in to IF
-    60              1                        298         if (~&out_r) 
-    62              1                          3         else
+    45                                        62     Count coming in to IF
+    45              2                         57             INC:      begin if (b < 4'hf) out_r = b + 1; else out_r = 4'hf; end
+    45              3                          5             INC:      begin if (b < 4'hf) out_r = b + 1; else out_r = 4'hf; end
 Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                        63     Count coming in to IF
+    46              2                         52             DEC:      begin if (b > 0) out_r = b - 1; else out_r = 0; end
+    46              3                         11             DEC:      begin if (b > 0) out_r = b - 1; else out_r = 0; end
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                      1001     Count coming in to IF
+    60              1                        987         if (~&out_r) 
+    62              1                         14         else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /alu_tb/DUT_G --
+
+  File alu_ref.sv
+----------------Focused Condition View-------------------
+Line       45 Item    1  (b < 15)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+    (b < 15)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (b < 15)_0            -                             
+  Row   2:          1  (b < 15)_1            -                             
+
+----------------Focused Condition View-------------------
+Line       46 Item    1  (b > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+     (b > 0)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (b > 0)_0             -                             
+  Row   2:          1  (b > 0)_1             -                             
 
 
 Statement Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Statements                      29        24         5    82.75%
+    Statements                      31        31         0   100.00%
 
 ================================Statement Details================================
 
@@ -331,53 +380,55 @@ Statement Coverage for instance /alu_tb/DUT_G --
     19                                               reg [4:0] out_r;
     20                                               reg valid_r, zero_r;
     21                                               
-    22              1                        278     assign opcode = opcode_e'(ctl);
+    22              1                        997     assign opcode = opcode_e'(ctl);
     23                                               
-    24              1                        337     always @(posedge clk or negedge reset) begin
+    24              1                       1003     always @(posedge clk or negedge reset) begin
     25                                                   if(~reset) begin
-    26              1                         73             valid_out <= 1'b0;
-    27              1                         73             alu <= 4'b0;
-    28              1                         73             carry <= 1'b0;
-    29              1                         73             zero <= 1'b0;
+    26              1                         24             valid_out <= 1'b0;
+    27              1                         24             alu <= 4'b0;
+    28              1                         24             carry <= 1'b0;
+    29              1                         24             zero <= 1'b0;
     30                                                   end
     31                                                   else begin 
-    32              1                        264             valid_out <= valid_r;
+    32              1                        979             valid_out <= valid_r;
     33                                                       if(valid_in) begin
-    34              1                        261                 alu   <= out_r[3:0];
-    35              1                        261                 carry <= out_r[4];
-    36              1                        261                 zero  <= zero_r;
+    34              1                        978                 alu   <= out_r[3:0];
+    35              1                        978                 carry <= out_r[4];
+    36              1                        978                 zero  <= zero_r;
     37                                                       end
     38                                                   end
     39                                               end
     40                                               
-    41              1                        301     always @(*) begin
-    42              1                        301         valid_r = valid_in;
+    41              1                       1001     always @(*) begin
+    42              1                       1001         valid_r = valid_in;
     43                                                   case (opcode)
-    44              1                         34             SEL:      out_r = b;
-    45              1                         25             INC:      out_r = b + 1; 
-    46              1                         21             DEC:      out_r = b - 1; 
-    47              1                         34             ADD:      out_r = a + b;
-    48              1                         36             ADD_c:    out_r = a + b + cin;
-    49              1                         25             SUB:      out_r = a - b;
-    50              1                         36             SUB_b:    out_r = a - b - cin;
-    51              1                         24             AND:      out_r = a & b; 
-    52              1                         33             OR:       out_r = a | b;
-    53              1                         33             XOR:      out_r = a ^ b;
-    54              1                    ***0***             SHIFT_L:  out_r = {out_r[3:0], 1'b0};
-    55              1                    ***0***             SHIFT_R:  out_r = {1'b0, out_r[4:1]};
-    56              1                    ***0***             ROTATE_L: out_r = {out_r[3:0], out_r[4]};
-    57              1                    ***0***             ROTATE_R: out_r = {out_r[0], out_r[4:1]};
-    58              1                    ***0***             default:  valid_r = 1'b0;
+    44              1                         64             SEL:      out_r = b;
+    45              1                         57             INC:      begin if (b < 4'hf) out_r = b + 1; else out_r = 4'hf; end
+    45              2                          5     
+    46              1                         52             DEC:      begin if (b > 0) out_r = b - 1; else out_r = 0; end
+    46              2                         11     
+    47              1                         62             ADD:      out_r = a + b;
+    48              1                         62             ADD_c:    out_r = a + b + cin;
+    49              1                         63             SUB:      out_r = a - b;
+    50              1                         63             SUB_b:    out_r = a - b - cin;
+    51              1                         62             AND:      out_r = a & b; 
+    52              1                         63             OR:       out_r = a | b;
+    53              1                         62             XOR:      out_r = a ^ b;
+    54              1                         63             SHIFT_L:  out_r = {out_r[3:0], 1'b0};
+    55              1                         62             SHIFT_R:  out_r = {1'b0, out_r[4:1]};
+    56              1                         62             ROTATE_L: out_r = {out_r[3:0], out_r[4]};
+    57              1                         63             ROTATE_R: out_r = {out_r[0], out_r[4:1]};
+    58              1                        125             default:  valid_r = 1'b0;
     59                                                   endcase
     60                                                   if (~&out_r) 
-    61              1                        298             zero_r = 1'b1;
+    61              1                        987             zero_r = 1'b1;
     62                                                   else
-    63              1                          3             zero_r = 1'b0;
+    63              1                         14             zero_r = 1'b0;
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Toggles                         74        70         4    94.59%
+    Toggles                         76        75         1    98.68%
 
 ================================Toggle Details================================
 
@@ -393,33 +444,35 @@ Toggle Coverage for instance /alu_tb/DUT_G --
                                                clk           1           1                              100.00 
                                           ctl[0-3]           1           1                              100.00 
                                             opcode               ENUM type       Value       Count 
-                                                                       SEL          30      100.00 
-                                                                       INC          25      100.00 
-                                                                       DEC          20      100.00 
-                                                                       ADD          30      100.00 
-                                                                     ADD_c          32      100.00 
-                                                                       SUB          23      100.00 
-                                                                     SUB_b          32      100.00 
-                                                                       AND          23      100.00 
-                                                                        OR          30      100.00 
-                                                                       XOR          31      100.00 
-                                                                   SHIFT_L           0        0.00 
-                                                                   SHIFT_R           0        0.00 
-                                                                  ROTATE_L           0        0.00 
-                                                                  ROTATE_R           0        0.00 
+                                                                       SEL           1      100.00 
+                                                                       INC           1      100.00 
+                                                                       DEC           1      100.00 
+                                                                       ADD           1      100.00 
+                                                                     ADD_c           1      100.00 
+                                                                       SUB           1      100.00 
+                                                                     SUB_b           1      100.00 
+                                                                       AND           1      100.00 
+                                                                        OR           1      100.00 
+                                                                       XOR           1      100.00 
+                                                                   SHIFT_L           1      100.00 
+                                                                   SHIFT_R           1      100.00 
+                                                                  ROTATE_L           1      100.00 
+                                                                  ROTATE_R           1      100.00 
+                                                                 invalid_1           1      100.00 
+                                                                 invalid_2           1      100.00 
                                         out_r[4-0]           1           1                              100.00 
                                              reset           1           1                              100.00 
-                                          valid_in           1           1                              100.00 
+                                          valid_in           0           1                               50.00 
                                          valid_out           1           1                              100.00 
                                            valid_r           1           1                              100.00 
                                               zero           1           1                              100.00 
                                             zero_r           1           1                              100.00 
 
-Total Node Count     =         44 
-Toggled Node Count   =         40 
-Untoggled Node Count =          4 
+Total Node Count     =         46 
+Toggled Node Count   =         45 
+Untoggled Node Count =          1 
 
-Toggle Coverage      =      94.59% (70 of 74 bins)
+Toggle Coverage      =      98.68% (75 of 76 bins)
 
 =================================================================================
 === Instance: /alu_tb
@@ -427,33 +480,42 @@ Toggle Coverage      =      94.59% (70 of 74 bins)
 =================================================================================
 
 Assertion Coverage:
-    Assertions                      17         1        16     5.88%
+    Assertions                      14         6         8    42.85%
 --------------------------------------------------------------------
 Name                 File(Line)                   Failure      Pass 
                                                   Count        Count
 --------------------------------------------------------------------
-/alu_tb/a_SEL        alu_tb.sv(68)                      0          0
-/alu_tb/a_INC        alu_tb.sv(74)                      0          0
-/alu_tb/a_DEC        alu_tb.sv(80)                      0          0
-/alu_tb/a_ADD        alu_tb.sv(86)                      1          0
-/alu_tb/a_ADD_c      alu_tb.sv(92)                      0          0
-/alu_tb/a_SUB        alu_tb.sv(98)                      0          0
-/alu_tb/a_SUB_b      alu_tb.sv(104)                     0          0
-/alu_tb/a_AND        alu_tb.sv(110)                     0          0
-/alu_tb/a_OR         alu_tb.sv(116)                     1          0
-/alu_tb/a_XOR        alu_tb.sv(122)                     1          0
-/alu_tb/a_SHIFT_L    alu_tb.sv(128)                     0          0
-/alu_tb/a_SHIFT_R    alu_tb.sv(134)                     0          0
-/alu_tb/a_ROTATE_L   alu_tb.sv(140)                     0          0
-/alu_tb/a_ROTATE_R   alu_tb.sv(146)                     0          0
-/alu_tb/a_CARRY      alu_tb.sv(156)                     1          0
-/alu_tb/a_ZERO       alu_tb.sv(162)                     3          0
-/alu_tb/#ublk#109295266#173/immed__174
-                     alu_tb.sv(174)                     0          1
+/alu_tb/assert__p_Valid_out_on
+                     alu_tb.sv(195)                    63          1
+/alu_tb/assert__p_Valid_out_off
+                     alu_tb.sv(186)                   120          0
+/alu_tb/assert__p_ZERO
+                     alu_tb.sv(177)                   978          0
+/alu_tb/assert__p_XOR
+                     alu_tb.sv(131)                     0          1
+/alu_tb/assert__p_OR alu_tb.sv(124)                     0          1
+/alu_tb/assert__p_AND
+                     alu_tb.sv(117)                     0          1
+/alu_tb/assert__p_SUB_b
+                     alu_tb.sv(110)                    63          0
+/alu_tb/assert__p_SUB
+                     alu_tb.sv(103)                    61          0
+/alu_tb/assert__p_ADD_c
+                     alu_tb.sv(96)                      0          1
+/alu_tb/assert__p_ADD
+                     alu_tb.sv(89)                      0          1
+/alu_tb/assert__p_DEC
+                     alu_tb.sv(82)                      9          1
+/alu_tb/assert__p_INC
+                     alu_tb.sv(75)                      5          1
+/alu_tb/assert__p_SEL
+                     alu_tb.sv(68)                     58          1
+/alu_tb/#ublk#109295266#207/immed__208
+                     alu_tb.sv(208)                     0          1
 Branch Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Branches                        10         6         4    60.00%
+    Branches                         4         4         0   100.00%
 
 ================================Branch Details================================
 
@@ -464,36 +526,18 @@ NOTE: The modification timestamp for source file 'alu_tb.sv' has been altered si
     ----         ----                      -----     ------ 
   File alu_tb.sv
 ------------------------------------IF Branch------------------------------------
-    152                                        1     Count coming in to IF
-    152             1                    ***0***                       (a_tb + b_tb + (ctl_tb == ADD_c ? cin_tb : 0)) >> $bits(alu_tb) :
-    153             1                          1                       (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    152                                  ***0***     Count coming in to IF
-    152             2                    ***0***                       (a_tb + b_tb + (ctl_tb == ADD_c ? cin_tb : 0)) >> $bits(alu_tb) :
-    152             3                    ***0***                       (a_tb + b_tb + (ctl_tb == ADD_c ? cin_tb : 0)) >> $bits(alu_tb) :
-Branch totals: 0 hits of 2 branches = 0.00%
-
-------------------------------------IF Branch------------------------------------
-    153                                        1     Count coming in to IF
-    153             2                    ***0***                       (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
-    153             3                          1                       (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    243                                      301     Count coming in to IF
-    243             1                         85             #1
-    247             1                         25     		end	
-    251             1                         12     		end	
-    255             1                        179     		end	
+    280                                     1001     Count coming in to IF
+    280             1                        559     			incorrect_count = incorrect_count +1;
+    284             1                         60     			incorrect_count = incorrect_count +1;
+    288             1                         41     			incorrect_count = incorrect_count +1;
+    292             1                        341     			correct_count = correct_count +1;
 Branch totals: 4 hits of 4 branches = 100.00%
 
 
 Condition Coverage:
     Enabled Coverage              Bins   Covered    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Conditions                       7         3         4    42.85%
+    Conditions                       3         3         0   100.00%
 
 ================================Condition Details================================
 
@@ -502,49 +546,7 @@ NOTE: The modification timestamp for source file 'alu_tb.sv' has been altered si
 
   File alu_tb.sv
 ----------------Focused Condition View-------------------
-Line       151 Item    1  ((ctl_tb == ADD) || (ctl_tb == ADD_c))
-Condition totals: 0 of 2 input terms covered = 0.00%
-
-         Input Term   Covered  Reason for no coverage   Hint
-        -----------  --------  -----------------------  --------------
-    (ctl_tb == ADD)         N  '_1' not hit             Hit '_1'
-  (ctl_tb == ADD_c)         N  '_1' not hit             Hit '_1'
-
-     Rows:       Hits  FEC Target            Non-masking condition(s)      
- ---------  ---------  --------------------  -------------------------     
-  Row   1:          1  (ctl_tb == ADD)_0     ~(ctl_tb == ADD_c)            
-  Row   2:    ***0***  (ctl_tb == ADD)_1     -                             
-  Row   3:          1  (ctl_tb == ADD_c)_0   ~(ctl_tb == ADD)              
-  Row   4:    ***0***  (ctl_tb == ADD_c)_1   ~(ctl_tb == ADD)              
-
-----------------Focused Condition View-------------------
-Line       152 Item    1  (ctl_tb == ADD_c)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-         Input Term   Covered  Reason for no coverage   Hint
-        -----------  --------  -----------------------  --------------
-  (ctl_tb == ADD_c)         N  No hits                  Hit '_0' and '_1'
-
-     Rows:       Hits  FEC Target            Non-masking condition(s)      
- ---------  ---------  --------------------  -------------------------     
-  Row   1:    ***0***  (ctl_tb == ADD_c)_0   -                             
-  Row   2:    ***0***  (ctl_tb == ADD_c)_1   -                             
-
-----------------Focused Condition View-------------------
-Line       153 Item    1  (ctl_tb == SUB_b)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-         Input Term   Covered  Reason for no coverage   Hint
-        -----------  --------  -----------------------  --------------
-  (ctl_tb == SUB_b)         N  '_1' not hit             Hit '_1'
-
-     Rows:       Hits  FEC Target            Non-masking condition(s)      
- ---------  ---------  --------------------  -------------------------     
-  Row   1:          1  (ctl_tb == SUB_b)_0   -                             
-  Row   2:    ***0***  (ctl_tb == SUB_b)_1   -                             
-
-----------------Focused Condition View-------------------
-Line       243 Item    1  (alu_tb !== alu_g)
+Line       280 Item    1  (alu_tb !== alu_g)
 Condition totals: 1 of 1 input term covered = 100.00%
 
           Input Term   Covered  Reason for no coverage   Hint
@@ -557,7 +559,7 @@ Condition totals: 1 of 1 input term covered = 100.00%
   Row   2:          1  (alu_tb !== alu_g)_1  -                             
 
 ----------------Focused Condition View-------------------
-Line       247 Item    1  (valid_out_tb !== valid_out_g)
+Line       284 Item    1  (valid_out_tb !== valid_out_g)
 Condition totals: 1 of 1 input term covered = 100.00%
 
                       Input Term   Covered  Reason for no coverage   Hint
@@ -570,7 +572,7 @@ Condition totals: 1 of 1 input term covered = 100.00%
   Row   2:          1  (valid_out_tb !== valid_out_g)_1  -                             
 
 ----------------Focused Condition View-------------------
-Line       251 Item    1  (zero_tb !== zero_g)
+Line       288 Item    1  (zero_tb !== zero_g)
 Condition totals: 1 of 1 input term covered = 100.00%
 
             Input Term   Covered  Reason for no coverage   Hint
@@ -583,10 +585,32 @@ Condition totals: 1 of 1 input term covered = 100.00%
   Row   2:          1  (zero_tb !== zero_g)_1  -                             
 
 
+
+Directive Coverage:
+    Directives                      13         9         4    69.23%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/alu_tb/cover__p_Valid_out_on            alu_tb Verilog  SVA  alu_tb.sv(196)   795 Covered   
+/alu_tb/cover__p_Valid_out_off           alu_tb Verilog  SVA  alu_tb.sv(187)     0 ZERO      
+/alu_tb/cover__p_ZERO                    alu_tb Verilog  SVA  alu_tb.sv(178)     0 ZERO      
+/alu_tb/cover__p_XOR                     alu_tb Verilog  SVA  alu_tb.sv(132)    60 Covered   
+/alu_tb/cover__p_OR                      alu_tb Verilog  SVA  alu_tb.sv(125)    62 Covered   
+/alu_tb/cover__p_AND                     alu_tb Verilog  SVA  alu_tb.sv(118)    61 Covered   
+/alu_tb/cover__p_SUB_b                   alu_tb Verilog  SVA  alu_tb.sv(111)     0 ZERO      
+/alu_tb/cover__p_SUB                     alu_tb Verilog  SVA  alu_tb.sv(104)     0 ZERO      
+/alu_tb/cover__p_ADD_c                   alu_tb Verilog  SVA  alu_tb.sv(97)     61 Covered   
+/alu_tb/cover__p_ADD                     alu_tb Verilog  SVA  alu_tb.sv(90)     61 Covered   
+/alu_tb/cover__p_DEC                     alu_tb Verilog  SVA  alu_tb.sv(83)     51 Covered   
+/alu_tb/cover__p_INC                     alu_tb Verilog  SVA  alu_tb.sv(76)     56 Covered   
+/alu_tb/cover__p_SEL                     alu_tb Verilog  SVA  alu_tb.sv(69)      4 Covered   
 Statement Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Statements                      63        63         0   100.00%
+    Statements                      64        64         0   100.00%
 
 ================================Statement Details================================
 
@@ -616,8 +640,8 @@ NOTE: The modification timestamp for source file 'alu_tb.sv' has been altered si
     25                                               logic [3:0] a_g, b_g, ctl_g, alu_g;  
     26                                               opcode_e    opcode_g;
     27                                               
-    28              1                        278     assign opcode_tb = opcode_e'(ctl_tb);
-    29              1                        278     assign opcode_g  = opcode_e'(ctl_g);
+    28              1                        997     assign opcode_tb = opcode_e'(ctl_tb);
+    29              1                        997     assign opcode_g  = opcode_e'(ctl_g);
     30                                               
     31                                               ////////////////////////////////////////////////////////
     32                                               ////////////////////// Counters ////////////////////////
@@ -643,11 +667,11 @@ NOTE: The modification timestamp for source file 'alu_tb.sv' has been altered si
     52                                               
     53                                               //q1 inputs = new();//
     54                                               
-    55              1                        609     always #(CLOCK_PERIOD/2) clk_tb = ~clk_tb;
-    55              2                        608     
+    55              1                       2006     always #(CLOCK_PERIOD/2) clk_tb = ~clk_tb;
+    55              2                       2005     
     56                                               
-    57              1                        609     always #(CLOCK_PERIOD/2) clk_g = ~clk_g;
-    57              2                        608     
+    57              1                       2006     always #(CLOCK_PERIOD/2) clk_g = ~clk_g;
+    57              2                       2005     
     58                                               
     59                                               
     60                                               ////////////////////////////////////////////////////////
@@ -655,213 +679,250 @@ NOTE: The modification timestamp for source file 'alu_tb.sv' has been altered si
     62                                               ////////////////////////////////////////////////////////
     63                                               
     64                                               property p_SEL;
-    65                                                   @(posedge clk_tb) disable iff (reset_tb)
-    66                                                   valid_in_tb && ctl_tb == SEL |=> (alu_tb == b_tb) && valid_out_tb;
+    65                                                   @(posedge clk_tb) disable iff (!reset_tb)
+    66                                                   valid_in_tb && ctl_tb == SEL |=> (alu_tb == $past(b_tb));
     67                                               endproperty
-    68                                               a_SEL: assert property (p_SEL);
-    69                                               
-    70                                               property p_INC;
-    71                                                   @(posedge clk_tb) disable iff (reset_tb)
-    72                                                   valid_in_tb && ctl_tb == INC |=> (alu_tb == (b_tb + 1)) && valid_out_tb;
-    73                                               endproperty
-    74                                               a_INC: assert property (p_INC);
-    75                                               
-    76                                               property p_DEC;
-    77                                                   @(posedge clk_tb) disable iff (reset_tb)
-    78                                                   valid_in_tb && ctl_tb == DEC |=> (alu_tb == (b_tb - 1)) && valid_out_tb;
-    79                                               endproperty
-    80                                               a_DEC: assert property (p_DEC);
-    81                                               
-    82                                               property p_ADD;
-    83                                                   @(posedge clk_tb) disable iff (reset_tb)
-    84                                                   valid_in_tb && ctl_tb == ADD |=> (alu_tb == (a_tb + b_tb)) && valid_out_tb;
-    85                                               endproperty
-    86                                               a_ADD: assert property (p_ADD);
-    87                                               
-    88                                               property p_ADD_c;
-    89                                                   @(posedge clk_tb) disable iff (reset_tb)
-    90                                                   valid_in_tb && ctl_tb == ADD_c |=> (alu_tb == (a_tb + b_tb + cin_tb)) && valid_out_tb;
-    91                                               endproperty
-    92                                               a_ADD_c: assert property (p_ADD_c);
-    93                                               
-    94                                               property p_SUB;
-    95                                                   @(posedge clk_tb) disable iff (reset_tb)
-    96                                                   valid_in_tb && ctl_tb == SUB |=> (alu_tb == (a_tb - b_tb)) && valid_out_tb;
-    97                                               endproperty
-    98                                               a_SUB: assert property (p_SUB);
-    99                                               
-    100                                              property p_SUB_b;
-    101                                                  @(posedge clk_tb) disable iff (reset_tb)
-    102                                                  valid_in_tb && ctl_tb == SUB_b |=> (alu_tb == (a_tb - b_tb - cin_tb)) && valid_out_tb;
-    103                                              endproperty
-    104                                              a_SUB_b: assert property (p_SUB_b);
+    68                                               assert property (p_SEL);
+    69                                               cover property (p_SEL);
+    70                                               
+    71                                               property p_INC;
+    72                                                   @(posedge clk_tb) disable iff (!reset_tb)
+    73                                                   valid_in_tb && ctl_tb == INC |=> (alu_tb == ($past(b_tb) + 1)) ;
+    74                                               endproperty
+    75                                               assert property (p_INC);
+    76                                               cover property (p_INC);
+    77                                               
+    78                                               property p_DEC;
+    79                                                   @(posedge clk_tb) disable iff (!reset_tb)
+    80                                                   valid_in_tb && ctl_tb == DEC |=> (alu_tb == ($past(b_tb) - 1)) ;
+    81                                               endproperty
+    82                                               assert property (p_DEC);
+    83                                               cover property (p_DEC);
+    84                                               
+    85                                               property p_ADD;
+    86                                                   @(posedge clk_tb) disable iff (!reset_tb)
+    87                                                   valid_in_tb && ctl_tb == ADD |=> (alu_tb == ($past(a_tb) + $past(b_tb))) ;
+    88                                               endproperty
+    89                                               assert property (p_ADD);
+    90                                               cover property (p_ADD);
+    91                                               
+    92                                               property p_ADD_c;
+    93                                                   @(posedge clk_tb) disable iff (!reset_tb)
+    94                                                   valid_in_tb && ctl_tb == ADD_c |=> (alu_tb == ($past(a_tb) + $past(b_tb) + $past(cin_tb))) ;
+    95                                               endproperty
+    96                                               assert property (p_ADD_c);
+    97                                               cover property (p_ADD_c);
+    98                                               
+    99                                               property p_SUB;
+    100                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    101                                                  valid_in_tb && ctl_tb == SUB |=> (alu_tb == ($past(a_tb) - $past(b_tb))) ;
+    102                                              endproperty
+    103                                              assert property (p_SUB);
+    104                                              cover property (p_SUB);
     105                                              
-    106                                              property p_AND;
-    107                                                  @(posedge clk_tb) disable iff (reset_tb)
-    108                                                  valid_in_tb && ctl_tb == AND |=> (alu_tb == (a_tb & b_tb)) && valid_out_tb;
+    106                                              property p_SUB_b;
+    107                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    108                                                  valid_in_tb && ctl_tb == SUB_b |=> (alu_tb == ($past(a_tb) - $past(b_tb) - $past(cin_tb))) ;
     109                                              endproperty
-    110                                              a_AND: assert property (p_AND);
-    111                                              
-    112                                              property p_OR;
-    113                                                  @(posedge clk_tb) disable iff (reset_tb)
-    114                                                  valid_in_tb && ctl_tb == OR |=> (alu_tb == (a_tb | b_tb)) && valid_out_tb;
-    115                                              endproperty
-    116                                              a_OR: assert property (p_OR);
-    117                                              
-    118                                              property p_XOR;
-    119                                                  @(posedge clk_tb) disable iff (reset_tb)
-    120                                                  valid_in_tb && ctl_tb == XOR |=> (alu_tb == (a_tb ^ b_tb)) && valid_out_tb;
-    121                                              endproperty
-    122                                              a_XOR: assert property (p_XOR);
-    123                                              
-    124                                              property p_SHIFT_L;
-    125                                                  @(posedge clk_tb) disable iff (reset_tb)
-    126                                                  valid_in_tb && ctl_tb == SHIFT_L |=> (alu_tb == (a_tb << 1)) && valid_out_tb;
-    127                                              endproperty
-    128                                              a_SHIFT_L: assert property (p_SHIFT_L);
-    129                                              
-    130                                              property p_SHIFT_R;
-    131                                                  @(posedge clk_tb) disable iff (reset_tb)
-    132                                                  valid_in_tb && ctl_tb == SHIFT_R |=> (alu_tb == (a_tb >> 1)) && valid_out_tb;
-    133                                              endproperty
-    134                                              a_SHIFT_R: assert property (p_SHIFT_R);
-    135                                              
-    136                                              property p_ROTATE_L;
-    137                                                  @(posedge clk_tb) disable iff (reset_tb)
-    138                                                  valid_in_tb && ctl_tb == ROTATE_L |=> (alu_tb == {a_tb[2:0], a_tb[3]}) && valid_out_tb;
-    139                                              endproperty
-    140                                              a_ROTATE_L: assert property (p_ROTATE_L);
-    141                                              
-    142                                              property p_ROTATE_R;
-    143                                                  @(posedge clk_tb) disable iff (reset_tb)
-    144                                                  valid_in_tb && ctl_tb == ROTATE_R |=> (alu_tb == {a_tb[0], a_tb[3:1]}) && valid_out_tb;
-    145                                              endproperty
-    146                                              a_ROTATE_R: assert property (p_ROTATE_R);
+    110                                              assert property (p_SUB_b);
+    111                                              cover property (p_SUB_b);
+    112                                              
+    113                                              property p_AND;
+    114                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    115                                                  valid_in_tb && ctl_tb == AND |=> (alu_tb == ($past(a_tb) & $past(b_tb))) ;
+    116                                              endproperty
+    117                                              assert property (p_AND);
+    118                                              cover property (p_AND);
+    119                                              
+    120                                              property p_OR;
+    121                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    122                                                  valid_in_tb && ctl_tb == OR |=> (alu_tb == ($past(a_tb) | $past(b_tb))) ;
+    123                                              endproperty
+    124                                              assert property (p_OR);
+    125                                              cover property (p_OR);
+    126                                              
+    127                                              property p_XOR;
+    128                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    129                                                  valid_in_tb && ctl_tb == XOR |=> (alu_tb == ($past(a_tb) ^ $past(b_tb))) ;
+    130                                              endproperty
+    131                                              assert property (p_XOR);
+    132                                              cover property (p_XOR);
+    133                                              
+    134                                              // property p_SHIFT_L;
+    135                                              //     @(posedge clk_tb) disable iff (!reset_tb)
+    136                                              //     valid_in_tb && ctl_tb == SHIFT_L |=> (alu_tb == ($past(a_tb) << 1)) && valid_out_tb;
+    137                                              // endproperty
+    138                                              // assert property (p_SHIFT_L);
+    139                                              // cover property (p_SHIFT_L);
+    140                                              
+    141                                              // property p_SHIFT_R;
+    142                                              //     @(posedge clk_tb) disable iff (!reset_tb)
+    143                                              //     valid_in_tb && ctl_tb == SHIFT_R |=> (alu_tb == ($past(a_tb) >> 1)) && valid_out_tb;
+    144                                              // endproperty
+    145                                              // assert property (p_SHIFT_R);
+    146                                              // cover property (p_SHIFT_R);
     147                                              
-    148                                              property p_CARRY;
-    149                                                  @(posedge clk_tb) disable iff (reset_tb)
-    150                                                  valid_in_tb && (ctl_tb inside {ADD, ADD_c, SUB, SUB_b}) |=> 
-    151                                                  (carry_tb == ((ctl_tb == ADD || ctl_tb == ADD_c) ? 
-    152                                                                (a_tb + b_tb + (ctl_tb == ADD_c ? cin_tb : 0)) >> $bits(alu_tb) :
-    153                                                                (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
-    154                                                   valid_out_tb);
-    155                                              endproperty
-    156                                              a_CARRY: assert property (p_CARRY);
-    157                                              
-    158                                              property p_ZERO;
-    159                                                  @(posedge clk_tb) disable iff (reset_tb)
-    160                                                  valid_in_tb |=> zero_tb == (alu_tb == 0);
-    161                                              endproperty
-    162                                              a_ZERO: assert property (p_ZERO);
-    163                                              
-    164                                              ////////////////////////////////////////////////////////
-    165                                              /////////// Applying Stimulus on Inputs //////////////// 
-    166                                              ////////////////////////////////////////////////////////
-    167                                              
-    168                                              initial begin
-    169             1                          1         RC = new();
-    170             1                          1         initialize();
-    171                                                  
-    172                                                  // Random check
-    173             1                        300         repeat(300) begin
-    174                                                      assert (RC.randomize());
-    175             1                        300             reset_tb = RC.rst;
-    176             1                        300             reset_g = RC.rst;
-    177             1                        300             valid_in_tb = RC.valid_in;
-    178             1                        300             valid_in_g = RC.valid_in;
-    179             1                        300             cin_tb = RC.cin;
-    180             1                        300             cin_g = RC.cin;
-    181             1                        300             a_tb = RC.a;
-    182             1                        300             a_g = RC.a;
-    183             1                        300             b_tb = RC.b;
-    184             1                        300             b_g = RC.b;
-    185             1                        300             ctl_tb = RC.ctl;
-    186             1                        300             ctl_g = RC.ctl;
-    187                                              
-    188             1                        300             RC.carry = carry_tb;
-    189             1                        300             RC.zero = zero_tb;
-    190             1                        300             RC.valid_out = valid_out_tb;
-    191             1                        300             RC.alu = alu_tb;
-    192                                              
-    193             1                        300             RC.alu_cvr.sample();
-    194             1                        300             check_result();
-    195                                              
-    196                                                  end
+    148                                              // property p_ROTATE_L;
+    149                                              //     @(posedge clk_tb) disable iff (!reset_tb)
+    150                                              //     valid_in_tb && ctl_tb == ROTATE_L |=> (alu_tb == {$past(a_tb[2:0]), $past(a_tb[3])}) && valid_out_tb;
+    151                                              // endproperty
+    152                                              // assert property (p_ROTATE_L);
+    153                                              // cover property (p_ROTATE_L);
+    154                                              
+    155                                              // property p_ROTATE_R;
+    156                                              //     @(posedge clk_tb) disable iff (!reset_tb)
+    157                                              //     valid_in_tb && ctl_tb == ROTATE_R |=> (alu_tb == {$past(a_tb[0]), $past(a_tb[3:1])}) && valid_out_tb;
+    158                                              // endproperty
+    159                                              // assert property (p_ROTATE_R);
+    160                                              // cover property (p_ROTATE_R);
+    161                                              
+    162                                              // property p_CARRY;
+    163                                              //     @(posedge clk_tb) disable iff (!reset_tb)
+    164                                              //     valid_in_tb && (ctl_tb inside {ADD, ADD_c, SUB, SUB_b}) |=> 
+    165                                              //     (carry_tb == ((ctl_tb == ADD || ctl_tb == ADD_c) ? 
+    166                                              //                   (a_tb + b_tb + (ctl_tb == ADD_c ? cin_tb : 0)) >> $bits(alu_tb) :
+    167                                              //                   (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
+    168                                              //      valid_out_tb);
+    169                                              // endproperty
+    170                                              // assert property (p_CARRY);
+    171                                              // cover property (p_CARRY);
+    172                                              
+    173                                              property p_ZERO;
+    174                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    175                                                  valid_in_tb |=> zero_tb == (alu_tb == 0);
+    176                                              endproperty
+    177                                              assert property (p_ZERO);
+    178                                              cover property (p_ZERO);
+    179                                              
+    180                                              property p_Valid_out_off;
+    181                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    182                                              
+    183                                                  ~valid_in_tb || ((ctl_tb == invalid_1 || ctl_tb == invalid_2) && valid_in_tb) |=> valid_out_tb == 0; 
+    184                                              
+    185                                              endproperty
+    186                                              assert property (p_Valid_out_off);
+    187                                              cover property (p_Valid_out_off);
+    188                                              
+    189                                              property p_Valid_out_on;
+    190                                                  @(posedge clk_tb) disable iff (!reset_tb)
+    191                                              
+    192                                                  valid_in_tb && (ctl_tb != invalid_1 && ctl_tb != invalid_2) |=> valid_out_tb; 
+    193                                                  
+    194                                              endproperty
+    195                                              assert property (p_Valid_out_on);
+    196                                              cover property (p_Valid_out_on);
     197                                              
-    198             1                          1         $display("total number of errors = %d , total numbers of correct  = %d", incorrect_count, correct_count);
-    199             1                          1         #5
-    200             1                          1         $stop;
-    201                                              end
-    202                                              
-    203                                              ////////////////////////////////////////////////////////
-    204                                              /////////////////////// TASKS //////////////////////////
-    205                                              ////////////////////////////////////////////////////////
-    206                                              
-    207                                              /////////////// Signals Initialization //////////////////
-    208                                              
-    209                                              task initialize;
-    210                                                  begin
-    211             1                          1             clk_tb = 1'b0;      clk_g = 1'b0;
-    211             2                          1     
-    212             1                          1             valid_in_tb = 1'b0; valid_in_g = 1'b0;
-    212             2                          1     
-    213             1                          1             cin_tb = 1'b0;      cin_g = 1'b0;
-    213             2                          1     
-    214             1                          1             a_tb = 4'b0;        a_g = 4'b0;
-    214             2                          1     
-    215             1                          1             b_tb = 4'b0;        b_g = 4'b0;
-    215             2                          1     
-    216             1                          1             ctl_tb = opcode_e'(4'b0000);      ctl_g = opcode_e'(4'b0000);
-    216             2                          1     
-    217                                              
-    218             1                          1             correct_count = 32'b0; 
-    219             1                          1             incorrect_count = 32'b0;
-    220                                              
-    221             1                          1             $display("Simulation started at time %0t", $time);
-    222             1                          1             reset();
-    223                                                  end
-    224                                              endtask
-    225                                              
-    226                                              ///////////////////////// RESET /////////////////////////
-    227                                              
-    228                                              task reset;
-    229                                                  begin
-    230             1                          1             reset_tb = 1; reset_g = 1;
-    230             2                          1     
-    231             1                          1             @(negedge clk_tb)
-    232             1                          1             reset_tb = 0; reset_g = 0;
-    232             2                          1     
-    233             1                          1             check_result();
-    234             1                          1             reset_tb = 1; reset_g = 1;
-    234             2                          1     
-    235                                                  end
-    236                                              endtask
-    237                                              
-    238                                              ////////////////// Check Result Response  ////////////////////
-    239                                              
-    240                                              task check_result();
-    241                                                  begin
-    242             1                        301             @(negedge clk_tb)
-    243                                                      #1
-    244             1                         85     		if (alu_tb !== alu_g) begin
-    245             1                         85     			$display("Incorrect alu!, %t", $time);
-    246                                              			incorrect_count = incorrect_count +1;
-    247                                              		end	
-    248             1                         25     		else if (valid_out_tb !==valid_out_g) begin
-    249             1                         25     			$display("Incorrect valid_out!, %t", $time);
-    250                                              			incorrect_count = incorrect_count +1;
-    251                                              		end	
-    252             1                         12     		else if (zero_tb !== zero_g) begin
-    253             1                         12     			$display("Incorrect zero flag!, %t", $time);
-    254                                              			incorrect_count = incorrect_count +1;
-    255                                              		end	
-    256             1                        179     		else begin
-    257             1                        179     			$display("Correct result, %t", $time);	
+    198                                              ////////////////////////////////////////////////////////
+    199                                              /////////// Applying Stimulus on Inputs //////////////// 
+    200                                              ////////////////////////////////////////////////////////
+    201                                              
+    202                                              initial begin
+    203             1                          1         RC = new();
+    204             1                          1         initialize();
+    205                                                  
+    206                                                  // Random check
+    207             1                       1000         repeat(1000) begin
+    208                                                      assert (RC.randomize());
+    209             1                       1000             reset_tb = RC.rst;
+    210             1                       1000             reset_g = RC.rst;
+    211                                                      valid_in_tb = RC.valid_in;
+    212             1                       1000             valid_in_g = RC.valid_in;
+    213                                                      cin_tb = RC.cin;
+    214             1                       1000             cin_g = RC.cin;
+    215             1                       1000             a_tb = RC.a;
+    216             1                       1000             a_g = RC.a;
+    217             1                       1000             b_tb = RC.b;
+    218             1                       1000             b_g = RC.b;
+    219             1                       1000             ctl_tb = RC.ctl;
+    220             1                       1000             ctl_g = RC.ctl;
+    221             1                       1000     
+    222             1                       1000             RC.carry = carry_tb;
+    223                                                      RC.zero = zero_tb;
+    224             1                       1000             RC.valid_out = valid_out_tb;
+    225             1                       1000             RC.alu = alu_tb;
+    226             1                       1000     
+    227             1                       1000             RC.alu_cvr.sample();
+    228                                                      check_result();
+    229             1                       1000     
+    230             1                       1000         end
+    231                                              
+    232                                                  $display("total number of errors = %d , total numbers of correct  = %d", incorrect_count, correct_count);
+    233                                                  #5
+    234             1                          1         $stop;
+    235             1                          1     end
+    236             1                          1     
+    237                                              ////////////////////////////////////////////////////////
+    238                                              /////////////////////// TASKS //////////////////////////
+    239                                              ////////////////////////////////////////////////////////
+    240                                              
+    241                                              /////////////// Signals Initialization //////////////////
+    242                                              
+    243                                              task initialize;
+    244                                                  begin
+    245                                                      clk_tb = 1'b0;      clk_g = 1'b0;
+    246                                                      valid_in_tb = 1'b0; valid_in_g = 1'b0;
+    247             1                          1             cin_tb = 1'b0;      cin_g = 1'b0;
+    247             2                          1     
+    248             1                          1             a_tb = 4'b0;        a_g = 4'b0;
+    248             2                          1     
+    249             1                          1             b_tb = 4'b0;        b_g = 4'b0;
+    249             2                          1     
+    250             1                          1             ctl_tb = opcode_e'(4'b0000);      ctl_g = opcode_e'(4'b0000);
+    250             2                          1     
+    251             1                          1     
+    251             2                          1     
+    252             1                          1             correct_count = 32'b0; 
+    252             2                          1     
+    253                                                      incorrect_count = 32'b0;
+    254             1                          1     
+    255             1                          1             $display("Simulation started at time %0t", $time);
+    256                                                      reset();
+    257             1                          1         end
+    258             1                          1     endtask
+    259                                              
+    260                                              ///////////////////////// RESET /////////////////////////
+    261                                              
+    262                                              task reset;
+    263                                                  begin
+    264                                                      reset_tb = 1; reset_g = 1;
+    265                                                      @(negedge clk_tb)
+    266             1                          1             reset_tb = 0; reset_g = 0;
+    266             2                          1     
+    267             1                          1             check_result();
+    268             1                          1             reset_tb = 1; reset_g = 1;
+    268             2                          1     
+    269             1                          1         end
+    270             1                          1     endtask
+    270             2                          1     
+    271                                              
+    272                                              ////////////////// Check Result Response  ////////////////////
+    273                                              
+    274                                              task check_result();
+    275                                                  begin
+    276                                                      @(negedge clk_tb)
+    277                                              #1
+    278             1                       1001     		if (alu_tb !== alu_g) begin
+    279             1                       1001     			$display("Incorrect alu!, %t", $time);
+    280                                              			incorrect_count = incorrect_count +1;
+    281             1                        559     		end	
+    282             1                        559     		else if (valid_out_tb !==valid_out_g) begin
+    283                                              			$display("Incorrect valid_out!, %t", $time);
+    284                                              			incorrect_count = incorrect_count +1;
+    285             1                         60     		end	
+    286             1                         60     		else if (zero_tb !== zero_g) begin
+    287                                              			$display("Incorrect zero flag!, %t", $time);
+    288                                              			incorrect_count = incorrect_count +1;
+    289             1                         41             end
+    290             1                         41             else begin
+    291                                              			$display("Correct result, %t", $time);	
+    292                                              			correct_count = correct_count +1;
+    293             1                        341     		end
+    294             1                        341         end
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Toggles                        248       140       108    56.45%
+    Toggles                        248       154        94    62.09%
 
 ================================Toggle Details================================
 
@@ -881,58 +942,58 @@ Toggle Coverage for instance /alu_tb --
                                             cin_tb           1           1                              100.00 
                                              clk_g           1           1                              100.00 
                                             clk_tb           1           1                              100.00 
-                                correct_count[0-6]           1           1                              100.00 
-                                  correct_count[7]           0           1                               50.00 
-                               correct_count[8-31]           0           0                                0.00 
+                                correct_count[0-7]           1           1                              100.00 
+                                  correct_count[8]           0           1                               50.00 
+                               correct_count[9-31]           0           0                                0.00 
                                         ctl_g[0-3]           1           1                              100.00 
                                        ctl_tb[0-3]           1           1                              100.00 
-                              incorrect_count[0-5]           1           1                              100.00 
-                                incorrect_count[6]           0           1                               50.00 
-                             incorrect_count[7-31]           0           0                                0.00 
+                              incorrect_count[0-8]           1           1                              100.00 
+                                incorrect_count[9]           0           1                               50.00 
+                            incorrect_count[10-31]           0           0                                0.00 
                                           opcode_g               ENUM type       Value       Count 
-                                                                       SEL          30      100.00 
-                                                                       INC          25      100.00 
-                                                                       DEC          20      100.00 
-                                                                       ADD          30      100.00 
-                                                                     ADD_c          32      100.00 
-                                                                       SUB          23      100.00 
-                                                                     SUB_b          32      100.00 
-                                                                       AND          23      100.00 
-                                                                        OR          30      100.00 
-                                                                       XOR          31      100.00 
-                                                                   SHIFT_L           0        0.00 
-                                                                   SHIFT_R           0        0.00 
-                                                                  ROTATE_L           0        0.00 
-                                                                  ROTATE_R           0        0.00 
+                                                                       SEL           1      100.00 
+                                                                       INC           1      100.00 
+                                                                       DEC           1      100.00 
+                                                                       ADD           1      100.00 
+                                                                     ADD_c           1      100.00 
+                                                                       SUB           1      100.00 
+                                                                     SUB_b           1      100.00 
+                                                                       AND           1      100.00 
+                                                                        OR           1      100.00 
+                                                                       XOR           1      100.00 
+                                                                   SHIFT_L           1      100.00 
+                                                                   SHIFT_R           1      100.00 
+                                                                  ROTATE_L           1      100.00 
+                                                                  ROTATE_R           1      100.00 
                                          opcode_tb               ENUM type       Value       Count 
-                                                                       SEL          30      100.00 
-                                                                       INC          25      100.00 
-                                                                       DEC          20      100.00 
-                                                                       ADD          30      100.00 
-                                                                     ADD_c          32      100.00 
-                                                                       SUB          23      100.00 
-                                                                     SUB_b          32      100.00 
-                                                                       AND          23      100.00 
-                                                                        OR          30      100.00 
-                                                                       XOR          31      100.00 
-                                                                   SHIFT_L           0        0.00 
-                                                                   SHIFT_R           0        0.00 
-                                                                  ROTATE_L           0        0.00 
-                                                                  ROTATE_R           0        0.00 
+                                                                       SEL           1      100.00 
+                                                                       INC           1      100.00 
+                                                                       DEC           1      100.00 
+                                                                       ADD           1      100.00 
+                                                                     ADD_c           1      100.00 
+                                                                       SUB           1      100.00 
+                                                                     SUB_b           1      100.00 
+                                                                       AND           1      100.00 
+                                                                        OR           1      100.00 
+                                                                       XOR           1      100.00 
+                                                                   SHIFT_L           1      100.00 
+                                                                   SHIFT_R           1      100.00 
+                                                                  ROTATE_L           1      100.00 
+                                                                  ROTATE_R           1      100.00 
                                            reset_g           1           1                              100.00 
                                           reset_tb           1           1                              100.00 
-                                        valid_in_g           1           1                              100.00 
-                                       valid_in_tb           1           1                              100.00 
+                                        valid_in_g           0           1                               50.00 
+                                       valid_in_tb           0           1                               50.00 
                                        valid_out_g           1           1                              100.00 
                                       valid_out_tb           1           1                              100.00 
                                             zero_g           1           1                              100.00 
                                            zero_tb           1           1                              100.00 
 
 Total Node Count     =        138 
-Toggled Node Count   =         79 
-Untoggled Node Count =         59 
+Toggled Node Count   =         89 
+Untoggled Node Count =         49 
 
-Toggle Coverage      =      56.45% (140 of 248 bins)
+Toggle Coverage      =      62.09% (154 of 248 bins)
 
 =================================================================================
 === Instance: /alu_pkg
@@ -955,72 +1016,72 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin asserted                                       37          1          -    Covered              
-        bin deasserted                                    263          1          -    Covered              
+        bin asserted                                       11          1          -    Covered              
+        bin deasserted                                    989          1          -    Covered              
     Coverpoint cin_cp                                 100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin low                                           217          1          -    Covered              
-        bin high                                           83          1          -    Covered              
+        bin low                                           718          1          -    Covered              
+        bin high                                          282          1          -    Covered              
     Coverpoint valid_in_cp                            100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin valid                                         297          1          -    Covered              
-        bin invalid                                         3          1          -    Covered              
+        bin valid                                         488          1          -    Covered              
+        bin invalid                                       512          1          -    Covered              
     Coverpoint ctl_cp                                 100.00%        100          -    Covered              
         covered/total bins:                                10         10          -                      
         missing/total bins:                                 0         10          -                      
         % Hit:                                        100.00%        100          -                      
-        bin all_ops[SEL]                                   33          1          -    Covered              
-        bin all_ops[INC]                                   25          1          -    Covered              
-        bin all_ops[DEC]                                   21          1          -    Covered              
-        bin all_ops[ADD]                                   34          1          -    Covered              
-        bin all_ops[ADD_c]                                 36          1          -    Covered              
-        bin all_ops[SUB]                                   25          1          -    Covered              
-        bin all_ops[SUB_b]                                 36          1          -    Covered              
-        bin all_ops[AND]                                   24          1          -    Covered              
-        bin all_ops[OR]                                    33          1          -    Covered              
-        bin all_ops[XOR]                                   33          1          -    Covered              
+        bin all_ops[SEL]                                   63          1          -    Covered              
+        bin all_ops[INC]                                   62          1          -    Covered              
+        bin all_ops[DEC]                                   63          1          -    Covered              
+        bin all_ops[ADD]                                   62          1          -    Covered              
+        bin all_ops[ADD_c]                                 62          1          -    Covered              
+        bin all_ops[SUB]                                   63          1          -    Covered              
+        bin all_ops[SUB_b]                                 63          1          -    Covered              
+        bin all_ops[AND]                                   62          1          -    Covered              
+        bin all_ops[OR]                                    63          1          -    Covered              
+        bin all_ops[XOR]                                   62          1          -    Covered              
     Coverpoint a_cp                                   100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero                                           30          1          -    Covered              
-        bin ones                                           16          1          -    Covered              
-        bin mid                                            41          1          -    Covered              
-        default bin random                                213                     -    Occurred             
+        bin zero                                          108          1          -    Covered              
+        bin ones                                           65          1          -    Covered              
+        bin mid                                           115          1          -    Covered              
+        default bin random                                712                     -    Occurred             
     Coverpoint b_cp                                   100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero                                           38          1          -    Covered              
-        bin ones                                           19          1          -    Covered              
-        bin mid                                            33          1          -    Covered              
-        default bin random                                210                     -    Occurred             
+        bin zero                                           96          1          -    Covered              
+        bin ones                                           55          1          -    Covered              
+        bin mid                                           124          1          -    Covered              
+        default bin random                                725                     -    Occurred             
     Coverpoint carry_cp                               100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin carry_0                                       253          1          -    Covered              
-        bin carry_1                                        47          1          -    Covered              
+        bin carry_0                                       766          1          -    Covered              
+        bin carry_1                                       234          1          -    Covered              
     Coverpoint zero_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero_set                                      241          1          -    Covered              
-        bin zero_unset                                     59          1          -    Covered              
+        bin zero_set                                      786          1          -    Covered              
+        bin zero_unset                                    214          1          -    Covered              
     Coverpoint valid_out_cp                           100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin valid_cases                                   158          1          -    Covered              
-        bin invalid_cases                                  67          1          -    Covered              
+        bin valid_cases                                   360          1          -    Covered              
+        bin invalid_cases                                  75          1          -    Covered              
 Statement Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Statements                       2         2         0   100.00%
+    Statements                       1         1         0   100.00%
 
 ================================Statement Details================================
 
@@ -1031,102 +1092,103 @@ Statement Coverage for instance /alu_pkg --
   File alu_pkg.sv
     1                                                package alu_pkg;
     2                                                
-    3                                                typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
+    3                                                typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R, invalid_1, invalid_2} opcode_e;
     4                                                
     5                                                    class random_class;
     6                                                        rand bit rst, cin,  valid_in;
     7                                                        rand bit [3:0] a,b;
-    8                                                        rand opcode_e ctl;
+    8                                                        randc opcode_e ctl;
     9                                                        bit carry, zero, valid_out;
     10                                                       bit [3:0] alu;
     11                                               
-    12                                                       // constraint 1: Reset
-    13                                                       constraint rst_c {rst dist {0:/10, 1:/90};}
-    14                                                       
-    15                                                       // constraint 2: cin
-    16                                                       constraint cin_c {cin dist {0:/70, 1:/30};}
-    17                                                       
-    18                                                       // Constraint 3: Control signal distribution
-    19                                                       //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
-    20                                                       constraint opcode_c {ctl dist {[SEL:XOR]};}
-    21                                               
-    22                                                       // Constraint 4: Valid_in should be 1 only when valid inputs exist
-    23                                                       // "If all inputs are 0, the operation is invalid, so valid_in will be 0"
-    24                                                       constraint valid_in_c {
-    25                                                           valid_in == ((a != 4'b0000) || (b != 4'b0000));
-    26                                                       }
-    27                                                       
-    28                                                       // constraint 5
-    29                                                       constraint a_b_c {
-    30                                                           a dist {0:/10, [4'b0001:4'b1111]:/90};  // Allow 0 in 10% of cases
-    31                                                           b dist {0:/10, [4'b0001:4'b1111]:/90};  // Allow 0 in 10% of cases
-    32                                                       }
-    33                                               
-    34                                                       // COVERGROUP
-    35                                                       covergroup alu_cvr;
-    36                                                           // Coverpoint for Reset
-    37                                                           rst_cp: coverpoint rst {
-    38                                                               bins asserted = {0};  // Reset active
-    39                                                               bins deasserted = {1}; // Reset inactive
-    40                                                           }
-    41                                                           
-    42                                                           // Coverpoint for Carry-in signal
-    43                                                           cin_cp: coverpoint cin {
-    44                                                               bins low = {0};
-    45                                                               bins high = {1};
-    46                                                           }
-    47                                               
-    48                                                           // Coverpoint for Valid-in signal
-    49                                                           valid_in_cp: coverpoint valid_in {
-    50                                                               bins valid = {1};
-    51                                                               bins invalid = {0};
-    52                                                           }
-    53                                                           
-    54                                                           // Coverpoint for ALU control signal (ensure all operations are exercised)
-    55                                                           ctl_cp: coverpoint ctl {
-    56                                                               bins all_ops[] = {[SEL:XOR]}; // Cover all ALU operations
-    57                                                           }
-    58                                               
-    59                                                           // Coverpoints for ALU input values (track different data patterns)
-    60                                                           a_cp: coverpoint a {
-    61                                                               bins zero = {4'b0000};          // Test zero input
-    62                                                               bins ones = {4'b1111};          // Test all ones
-    63                                                               bins mid = {[4'b0111:4'b1000]}; // Test middle range values
-    64                                                               bins random = default;          // Test other values
-    65                                                           }
-    66                                               
-    67                                                           b_cp: coverpoint b {
-    68                                                               bins zero = {4'b0000};          // Test zero input
-    69                                                               bins ones = {4'b1111};          // Test all ones
-    70                                                               bins mid = {[4'b0111:4'b1000]}; // Test middle range values
-    71                                                               bins random = default;          // Test other values
-    72                                                           }
-    73                                                           
-    74                                                           // Coverpoint for Carry-out
-    75                                                           carry_cp: coverpoint carry {
-    76                                                               bins carry_0 = {0};
-    77                                                               bins carry_1 = {1};
-    78                                                           }
-    79                                               
-    80                                                           // Coverpoint for Zero flag
-    81                                                           zero_cp: coverpoint zero {
-    82                                                               bins zero_set = {1};
-    83                                                               bins zero_unset = {0};
-    84                                                           }
-    85                                               
-    86                                                           // Coverpoint for valid_out
-    87                                                           valid_out_cp: coverpoint valid_out {
-    88                                                               bins valid_cases = {1} iff(rst && valid_in && (a != 4'b0000) && (b != 4'b0000));
-    89                                                               bins invalid_cases = {0};
-    90                                                           }   
-    91                                               
-    92                                                           // Cross Coverage
-    93                                                           
-    94                                                       endgroup
-    95                                               
-    96                                                       function new();
-    97              1                          1                 alu_cvr = new();
-    98              1                          1                 ctl = SEL;
+    12                                               
+    13                                               
+    14                                                       // constraint 1: Reset
+    15                                                       constraint rst_c {rst dist {0:/1, 1:/99};}
+    16                                                       
+    17                                                       // constraint 2: cin
+    18                                                       constraint cin_c {cin dist {0:/70, 1:/30};}
+    19                                                       
+    20                                                       // Constraint 3: Control signal distribution
+    21                                                       //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
+    22                                                       //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [invalid_1:invalid_2]:/10};}
+    23                                               
+    24                                                       // Constraint 4: Valid_in should be 1 only when valid inputs exist
+    25                                                       // "If all inputs are 0, the operation is invalid, so valid_in will be 0"
+    26                                                       //constraint valid_in_c {
+    27                                                           //valid_in == ((a != 4'b0000) || (b != 4'b0000));
+    28                                                       //}
+    29                                                       
+    30                                                       // constraint 5
+    31                                                       constraint a_b_c {
+    32                                                           a dist {0:/10, [4'b0001:4'b1111]:/90};  // Allow 0 in 10% of cases
+    33                                                           b dist {0:/10, [4'b0001:4'b1111]:/90};  // Allow 0 in 10% of cases
+    34                                                       }
+    35                                               
+    36                                                       // COVERGROUP
+    37                                                       covergroup alu_cvr;
+    38                                                           // Coverpoint for Reset
+    39                                                           rst_cp: coverpoint rst {
+    40                                                               bins asserted = {0};  // Reset active
+    41                                                               bins deasserted = {1}; // Reset inactive
+    42                                                           }
+    43                                                           
+    44                                                           // Coverpoint for Carry-in signal
+    45                                                           cin_cp: coverpoint cin {
+    46                                                               bins low = {0};
+    47                                                               bins high = {1};
+    48                                                           }
+    49                                               
+    50                                                           // Coverpoint for Valid-in signal
+    51                                                           valid_in_cp: coverpoint valid_in {
+    52                                                               bins valid = {1};
+    53                                                               bins invalid = {0};
+    54                                                           }
+    55                                                           
+    56                                                           // Coverpoint for ALU control signal (ensure all operations are exercised)
+    57                                                           ctl_cp: coverpoint ctl {
+    58                                                               bins all_ops[] = {[SEL:XOR]}; // Cover all ALU operations
+    59                                                           }
+    60                                               
+    61                                                           // Coverpoints for ALU input values (track different data patterns)
+    62                                                           a_cp: coverpoint a {
+    63                                                               bins zero = {4'b0000};          // Test zero input
+    64                                                               bins ones = {4'b1111};          // Test all ones
+    65                                                               bins mid = {[4'b0111:4'b1000]}; // Test middle range values
+    66                                                               bins random = default;          // Test other values
+    67                                                           }
+    68                                               
+    69                                                           b_cp: coverpoint b {
+    70                                                               bins zero = {4'b0000};          // Test zero input
+    71                                                               bins ones = {4'b1111};          // Test all ones
+    72                                                               bins mid = {[4'b0111:4'b1000]}; // Test middle range values
+    73                                                               bins random = default;          // Test other values
+    74                                                           }
+    75                                                           
+    76                                                           // Coverpoint for Carry-out
+    77                                                           carry_cp: coverpoint carry {
+    78                                                               bins carry_0 = {0};
+    79                                                               bins carry_1 = {1};
+    80                                                           }
+    81                                               
+    82                                                           // Coverpoint for Zero flag
+    83                                                           zero_cp: coverpoint zero {
+    84                                                               bins zero_set = {1};
+    85                                                               bins zero_unset = {0};
+    86                                                           }
+    87                                               
+    88                                                           // Coverpoint for valid_out
+    89                                                           valid_out_cp: coverpoint valid_out {
+    90                                                               bins valid_cases = {1} iff(rst && valid_in && (a != 4'b0000) && (b != 4'b0000));
+    91                                                               bins invalid_cases = {0};
+    92                                                           }   
+    93                                               
+    94                                                           // Cross Coverage
+    95                                                           
+    96                                                       endgroup
+    97                                               
+    98                                                       function new();
+    99              1                          1                 alu_cvr = new();
 
 
 COVERGROUP COVERAGE:
@@ -1142,94 +1204,124 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin asserted                                       37          1          -    Covered              
-        bin deasserted                                    263          1          -    Covered              
+        bin asserted                                       11          1          -    Covered              
+        bin deasserted                                    989          1          -    Covered              
     Coverpoint cin_cp                                 100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin low                                           217          1          -    Covered              
-        bin high                                           83          1          -    Covered              
+        bin low                                           718          1          -    Covered              
+        bin high                                          282          1          -    Covered              
     Coverpoint valid_in_cp                            100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin valid                                         297          1          -    Covered              
-        bin invalid                                         3          1          -    Covered              
+        bin valid                                         488          1          -    Covered              
+        bin invalid                                       512          1          -    Covered              
     Coverpoint ctl_cp                                 100.00%        100          -    Covered              
         covered/total bins:                                10         10          -                      
         missing/total bins:                                 0         10          -                      
         % Hit:                                        100.00%        100          -                      
-        bin all_ops[SEL]                                   33          1          -    Covered              
-        bin all_ops[INC]                                   25          1          -    Covered              
-        bin all_ops[DEC]                                   21          1          -    Covered              
-        bin all_ops[ADD]                                   34          1          -    Covered              
-        bin all_ops[ADD_c]                                 36          1          -    Covered              
-        bin all_ops[SUB]                                   25          1          -    Covered              
-        bin all_ops[SUB_b]                                 36          1          -    Covered              
-        bin all_ops[AND]                                   24          1          -    Covered              
-        bin all_ops[OR]                                    33          1          -    Covered              
-        bin all_ops[XOR]                                   33          1          -    Covered              
+        bin all_ops[SEL]                                   63          1          -    Covered              
+        bin all_ops[INC]                                   62          1          -    Covered              
+        bin all_ops[DEC]                                   63          1          -    Covered              
+        bin all_ops[ADD]                                   62          1          -    Covered              
+        bin all_ops[ADD_c]                                 62          1          -    Covered              
+        bin all_ops[SUB]                                   63          1          -    Covered              
+        bin all_ops[SUB_b]                                 63          1          -    Covered              
+        bin all_ops[AND]                                   62          1          -    Covered              
+        bin all_ops[OR]                                    63          1          -    Covered              
+        bin all_ops[XOR]                                   62          1          -    Covered              
     Coverpoint a_cp                                   100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero                                           30          1          -    Covered              
-        bin ones                                           16          1          -    Covered              
-        bin mid                                            41          1          -    Covered              
-        default bin random                                213                     -    Occurred             
+        bin zero                                          108          1          -    Covered              
+        bin ones                                           65          1          -    Covered              
+        bin mid                                           115          1          -    Covered              
+        default bin random                                712                     -    Occurred             
     Coverpoint b_cp                                   100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero                                           38          1          -    Covered              
-        bin ones                                           19          1          -    Covered              
-        bin mid                                            33          1          -    Covered              
-        default bin random                                210                     -    Occurred             
+        bin zero                                           96          1          -    Covered              
+        bin ones                                           55          1          -    Covered              
+        bin mid                                           124          1          -    Covered              
+        default bin random                                725                     -    Occurred             
     Coverpoint carry_cp                               100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin carry_0                                       253          1          -    Covered              
-        bin carry_1                                        47          1          -    Covered              
+        bin carry_0                                       766          1          -    Covered              
+        bin carry_1                                       234          1          -    Covered              
     Coverpoint zero_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin zero_set                                      241          1          -    Covered              
-        bin zero_unset                                     59          1          -    Covered              
+        bin zero_set                                      786          1          -    Covered              
+        bin zero_unset                                    214          1          -    Covered              
     Coverpoint valid_out_cp                           100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin valid_cases                                   158          1          -    Covered              
-        bin invalid_cases                                  67          1          -    Covered              
+        bin valid_cases                                   360          1          -    Covered              
+        bin invalid_cases                                  75          1          -    Covered              
 
 TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/alu_tb/cover__p_Valid_out_on            alu_tb Verilog  SVA  alu_tb.sv(196)   795 Covered   
+/alu_tb/cover__p_Valid_out_off           alu_tb Verilog  SVA  alu_tb.sv(187)     0 ZERO      
+/alu_tb/cover__p_ZERO                    alu_tb Verilog  SVA  alu_tb.sv(178)     0 ZERO      
+/alu_tb/cover__p_XOR                     alu_tb Verilog  SVA  alu_tb.sv(132)    60 Covered   
+/alu_tb/cover__p_OR                      alu_tb Verilog  SVA  alu_tb.sv(125)    62 Covered   
+/alu_tb/cover__p_AND                     alu_tb Verilog  SVA  alu_tb.sv(118)    61 Covered   
+/alu_tb/cover__p_SUB_b                   alu_tb Verilog  SVA  alu_tb.sv(111)     0 ZERO      
+/alu_tb/cover__p_SUB                     alu_tb Verilog  SVA  alu_tb.sv(104)     0 ZERO      
+/alu_tb/cover__p_ADD_c                   alu_tb Verilog  SVA  alu_tb.sv(97)     61 Covered   
+/alu_tb/cover__p_ADD                     alu_tb Verilog  SVA  alu_tb.sv(90)     61 Covered   
+/alu_tb/cover__p_DEC                     alu_tb Verilog  SVA  alu_tb.sv(83)     51 Covered   
+/alu_tb/cover__p_INC                     alu_tb Verilog  SVA  alu_tb.sv(76)     56 Covered   
+/alu_tb/cover__p_SEL                     alu_tb Verilog  SVA  alu_tb.sv(69)      4 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 69.23%  COVERS: 13
 
 ASSERTION RESULTS:
 --------------------------------------------------------------------
 Name                 File(Line)                   Failure      Pass 
                                                   Count        Count
 --------------------------------------------------------------------
-/alu_tb/a_SEL        alu_tb.sv(68)                      0          0
-/alu_tb/a_INC        alu_tb.sv(74)                      0          0
-/alu_tb/a_DEC        alu_tb.sv(80)                      0          0
-/alu_tb/a_ADD        alu_tb.sv(86)                      1          0
-/alu_tb/a_ADD_c      alu_tb.sv(92)                      0          0
-/alu_tb/a_SUB        alu_tb.sv(98)                      0          0
-/alu_tb/a_SUB_b      alu_tb.sv(104)                     0          0
-/alu_tb/a_AND        alu_tb.sv(110)                     0          0
-/alu_tb/a_OR         alu_tb.sv(116)                     1          0
-/alu_tb/a_XOR        alu_tb.sv(122)                     1          0
-/alu_tb/a_SHIFT_L    alu_tb.sv(128)                     0          0
-/alu_tb/a_SHIFT_R    alu_tb.sv(134)                     0          0
-/alu_tb/a_ROTATE_L   alu_tb.sv(140)                     0          0
-/alu_tb/a_ROTATE_R   alu_tb.sv(146)                     0          0
-/alu_tb/a_CARRY      alu_tb.sv(156)                     1          0
-/alu_tb/a_ZERO       alu_tb.sv(162)                     3          0
-/alu_tb/#ublk#109295266#173/immed__174
-                     alu_tb.sv(174)                     0          1
+/alu_tb/assert__p_Valid_out_on
+                     alu_tb.sv(195)                    63          1
+/alu_tb/assert__p_Valid_out_off
+                     alu_tb.sv(186)                   120          0
+/alu_tb/assert__p_ZERO
+                     alu_tb.sv(177)                   978          0
+/alu_tb/assert__p_XOR
+                     alu_tb.sv(131)                     0          1
+/alu_tb/assert__p_OR alu_tb.sv(124)                     0          1
+/alu_tb/assert__p_AND
+                     alu_tb.sv(117)                     0          1
+/alu_tb/assert__p_SUB_b
+                     alu_tb.sv(110)                    63          0
+/alu_tb/assert__p_SUB
+                     alu_tb.sv(103)                    61          0
+/alu_tb/assert__p_ADD_c
+                     alu_tb.sv(96)                      0          1
+/alu_tb/assert__p_ADD
+                     alu_tb.sv(89)                      0          1
+/alu_tb/assert__p_DEC
+                     alu_tb.sv(82)                      9          1
+/alu_tb/assert__p_INC
+                     alu_tb.sv(75)                      5          1
+/alu_tb/assert__p_SEL
+                     alu_tb.sv(68)                     58          1
+/alu_tb/#ublk#109295266#207/immed__208
+                     alu_tb.sv(208)                     0          1
 
-Total Coverage By Instance (filtered view): 71.49%
+Total Coverage By Instance (filtered view): 85.88%
 

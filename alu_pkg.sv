@@ -5,27 +5,27 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
     class random_class;
         rand bit rst, cin,  valid_in;
         rand bit [3:0] a,b;
-        rand opcode_e ctl;
+        randc opcode_e ctl;
         bit carry, zero, valid_out;
         bit [3:0] alu;
 
 
 
         // constraint 1: Reset
-        constraint rst_c {rst dist {0:/10, 1:/90};}
+        constraint rst_c {rst dist {0:/1, 1:/99};}
         
         // constraint 2: cin
         constraint cin_c {cin dist {0:/70, 1:/30};}
         
         // Constraint 3: Control signal distribution
         //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
-        constraint opcode_c {ctl dist {[SEL:XOR]:/90, [invalid_1, invalid_2]:/10};}
+        //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [invalid_1:invalid_2]:/10};}
 
         // Constraint 4: Valid_in should be 1 only when valid inputs exist
         // "If all inputs are 0, the operation is invalid, so valid_in will be 0"
-        constraint valid_in_c {
-            valid_in == ((a != 4'b0000) || (b != 4'b0000));
-        }
+        //constraint valid_in_c {
+            //valid_in == ((a != 4'b0000) || (b != 4'b0000));
+        //}
         
         // constraint 5
         constraint a_b_c {
@@ -97,7 +97,7 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
 
         function new();
             alu_cvr = new();
-            ctl = SEL;
+            //ctl = SEL;
         endfunction
     endclass
 endpackage

@@ -11,6 +11,29 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.1 2021.01, Jan 19 2021
 13
 !s112 1.1
@@ -18,170 +41,181 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-dE:/Digital Verification Course- KW/Assignments/Assignment 5
+Z1 dE:/Digital Verification Course- KW/Assignments/Assignment 5
 T_opt
 !s110 1739069001
 V<UeakVPQP5D_zXCo6O1[L2
-04 6 4 work alu_tb fast 0
+Z2 04 6 4 work alu_tb fast 0
 =1-34735af05edf-67a81649-cc-3834
-!s124 OEM100
-o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
 n@_opt
-OL;O;2021.1;73
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1739085561
+VZiaP^gMCAo;@F^WoebR?i2
+R2
+=1-b81ea46fa69b-67a856f9-f1-d28
+R3
+R4
+R5
+n@_opt1
+R6
 valu
-Z2 !s110 1739068997
+Z7 !s110 1739085550
 !i10b 1
 !s100 7enhOG6<CF1kjl;3Y:T?52
 IHDe<U7_QI=4z7Z;7mIljP2
-Z3 dD:/EECE2025/GP/Verification/ALU/ALU_Assignment
-w1739022980
+Z8 dC:/Users/moham/OneDrive/Desktop/ALU3/ALU_Assignment
+w1739076468
 8alu.v
 Falu.v
-!i122 32
+!i122 174
 L0 1 79
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.1;73
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z6 !s108 1739068997.000000
-Z7 !s107 alu_tb.sv|alu_pkg.sv|alu_ref.sv|alu.v|
-Z8 !s90 -reportprogress|300|alu.v|alu_ref.sv|alu_pkg.sv|alu_tb.sv|+cover|-covercells|
+Z11 !s108 1739085550.000000
+Z12 !s107 alu_tb.sv|alu_pkg.sv|alu_ref.sv|alu.v|
+Z13 !s90 -reportprogress|300|alu.v|alu_ref.sv|alu_pkg.sv|alu_tb.sv|+cover|-covercells|
 !i113 0
-Z9 !s102 +cover -covercells
-Z10 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+Z14 !s102 +cover -covercells
+Z15 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
 Xalu_pkg
-Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+Z16 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R7
 !i10b 1
-!s100 E^^lZ5jXdXIEn@_FBLBB[0
-IeGbc7J_?oGD]keNzP0N?W3
+!s100 ek1OP?POX>oog6_YXW_SD3
+I^jW_:BB1coFL<TPDNQn6T2
 S1
-R3
-w1739067421
+R8
+w1739083219
 8alu_pkg.sv
 Falu_pkg.sv
-!i122 32
-Z12 L0 1 0
-VeGbc7J_?oGD]keNzP0N?W3
-R5
+!i122 174
+Z17 L0 1 0
+V^jW_:BB1coFL<TPDNQn6T2
+R10
 r1
 !s85 0
 31
-R6
-R7
-R8
-!i113 0
-R9
-R10
-R1
-valu_ref
 R11
-DXx4 work 15 alu_ref_sv_unit 0 22 mNEO[Y_QIhgTm5zj`[LIH2
-R2
-R4
-r1
-!s85 0
-!i10b 1
-!s100 SgQNHU6Gi1<KZJ0nP0fab0
-I4XGN^O6ggi>0?6Y@Toe2b3
-!s105 alu_ref_sv_unit
-S1
-R3
-Z13 w1739060638
-Z14 8alu_ref.sv
-Z15 Falu_ref.sv
-!i122 32
-L0 3 63
-R5
-31
-R6
-R7
-R8
-!i113 0
-R9
-R10
-R1
-Xalu_ref_sv_unit
-R11
-R2
-VmNEO[Y_QIhgTm5zj`[LIH2
-r1
-!s85 0
-!i10b 1
-!s100 oaSS^iPTZ02j69z:]VG[J2
-ImNEO[Y_QIhgTm5zj`[LIH2
-!i103 1
-S1
-R3
+R12
 R13
+!i113 0
 R14
 R15
-!i122 32
-R12
 R5
-31
-R6
-R7
-R8
-!i113 0
-R9
-R10
-R1
-valu_tb
-R11
-Z16 DXx4 work 7 alu_pkg 0 22 eGbc7J_?oGD]keNzP0N?W3
-DXx4 work 14 alu_tb_sv_unit 0 22 MZ1WD;1K0miXUE1I>KLD>2
-R2
-R4
-r1
-!s85 0
-!i10b 1
-!s100 ;8lgo8BoZBoCZ84QSNH@?0
-I@j:6Wj5lUEalo;8>Y1;7:0
-!s105 alu_tb_sv_unit
-S1
-R3
-Z17 w1739068986
-Z18 8alu_tb.sv
-Z19 Falu_tb.sv
-!i122 32
-L0 8 259
-R5
-31
-R6
-R7
-R8
-!i113 0
-R9
-R10
-R1
-Xalu_tb_sv_unit
-R11
+valu_ref
 R16
-R2
-VMZ1WD;1K0miXUE1I>KLD>2
+DXx4 work 15 alu_ref_sv_unit 0 22 Z8<LfNGJ3J8IG:CaMCE0j3
+R7
+R9
 r1
 !s85 0
 !i10b 1
-!s100 bc;5h3OXc@=foB]4>AdNL3
-IMZ1WD;1K0miXUE1I>KLD>2
+!s100 N>dP==nFGZ@Zm_Hh6HibK3
+Ie_Wd3I?ka]E^W@[ljO0QQ0
+!s105 alu_ref_sv_unit
+S1
+R8
+Z18 w1739080461
+Z19 8alu_ref.sv
+Z20 Falu_ref.sv
+!i122 174
+L0 3 63
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R5
+Xalu_ref_sv_unit
+R16
+R7
+VZ8<LfNGJ3J8IG:CaMCE0j3
+r1
+!s85 0
+!i10b 1
+!s100 =j0B_OciL^:Bz4mIEH2g=1
+IZ8<LfNGJ3J8IG:CaMCE0j3
 !i103 1
 S1
-R3
-R17
+R8
 R18
 R19
-!i122 32
-L0 2 0
-R5
-31
-R6
-R7
-R8
-!i113 0
-R9
+R20
+!i122 174
+R17
 R10
-R1
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R5
+valu_tb
+R16
+Z21 DXx4 work 7 alu_pkg 0 22 ^jW_:BB1coFL<TPDNQn6T2
+DXx4 work 14 alu_tb_sv_unit 0 22 o_c[G;[PW]>dk9zk132i=3
+R7
+R9
+r1
+!s85 0
+!i10b 1
+!s100 ^lP_^RSDf9zWjg??4DIVR0
+IidlcS0zDX>E9fD:Gj?83=1
+!s105 alu_tb_sv_unit
+S1
+R8
+Z22 w1739085537
+Z23 8alu_tb.sv
+Z24 Falu_tb.sv
+!i122 174
+L0 8 294
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R5
+Xalu_tb_sv_unit
+R16
+R21
+R7
+Vo_c[G;[PW]>dk9zk132i=3
+r1
+!s85 0
+!i10b 1
+!s100 1>0;@D_:d[Z8CZoN[T0f32
+Io_c[G;[PW]>dk9zk132i=3
+!i103 1
+S1
+R8
+R22
+R23
+R24
+!i122 174
+L0 2 0
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R5
