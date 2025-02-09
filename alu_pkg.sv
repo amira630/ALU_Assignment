@@ -9,6 +9,8 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
         bit carry, zero, valid_out;
         bit [3:0] alu;
 
+
+
         // constraint 1: Reset
         constraint rst_c {rst dist {0:/10, 1:/90};}
         
@@ -17,7 +19,7 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
         
         // Constraint 3: Control signal distribution
         //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
-        constraint opcode_c {ctl dist {[SEL:XOR]};}
+        constraint opcode_c {ctl dist {[SEL:XOR]:/90, [invalid_1, invalid_2]:/10};}
 
         // Constraint 4: Valid_in should be 1 only when valid inputs exist
         // "If all inputs are 0, the operation is invalid, so valid_in will be 0"
