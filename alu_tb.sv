@@ -3,7 +3,7 @@ import alu_pkg::*;
 
 `timescale 1ns/1ps
 
-typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
+typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R, invalid_1, invalid_2} opcode_e;
 
 module alu_tb();
 
@@ -50,12 +50,9 @@ alu DUT(clk_tb, reset_tb, valid_in_tb, a_tb, b_tb, cin_tb, ctl_tb, valid_out_tb,
 ////////////////// Clock Generator  ////////////////////
 ////////////////////////////////////////////////////////
 
-//q1 inputs = new();//
-
 always #(CLOCK_PERIOD/2) clk_tb = ~clk_tb;
 
 always #(CLOCK_PERIOD/2) clk_g = ~clk_g;
-
 
 ////////////////////////////////////////////////////////
 ////////////////////// Assertions //////////////////////
