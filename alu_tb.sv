@@ -1,9 +1,9 @@
-//import Q1::*;//
+
 import alu_pkg::*;
 
 `timescale 1ns/1ps
 
-typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
+// typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
 
 module alu_tb();
 
@@ -167,33 +167,39 @@ cover property (p_XOR);
 //                   (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
 //      valid_out_tb);
 // endproperty
-// assert property (p_CARRY);
-// cover property (p_CARRY);
+
+property p_CARRY;
+    @(posedge clk_tb) disable iff (!reset_tb)
+    valid_in_tb && !(ctl_tb inside {ADD, ADD_c, SUB, SUB_b, invalid_1, invalid_2}) |=> ~carry_tb;
+endproperty
+assert property (p_CARRY);
+cover property (p_CARRY);
 
 property p_ZERO;
     @(posedge clk_tb) disable iff (!reset_tb)
-    valid_in_tb |=> zero_tb == (alu_tb == 0);
+    valid_in_tb && |=> zero_tb == (alu_tb == 4'b0);
 endproperty
 assert property (p_ZERO);
 cover property (p_ZERO);
 
 property p_Valid_out_off;
     @(posedge clk_tb) disable iff (!reset_tb)
-
-    ~valid_in_tb || ((ctl_tb == invalid_1 || ctl_tb == invalid_2) && valid_in_tb) |=> valid_out_tb == 0; 
-
+    ~valid_in_tb || ((ctl_tb == invalid_1 || ctl_tb == invalid_2) && valid_in_tb) |=> ~valid_out_tb; 
 endproperty
 assert property (p_Valid_out_off);
 cover property (p_Valid_out_off);
 
 property p_Valid_out_on;
     @(posedge clk_tb) disable iff (!reset_tb)
-
     valid_in_tb && (ctl_tb != invalid_1 && ctl_tb != invalid_2) |=> valid_out_tb; 
-    
 endproperty
 assert property (p_Valid_out_on);
 cover property (p_Valid_out_on);
+
+property p_Valid_in_off;
+    @(posedge clk_tb) disable iff (!reset_tb)
+    ~valid_in_tb |=> ($past(alu_tb) == $past(alu_tb,1) && $past(carry_tb) == $past(carry_tb,1) && ~valid_out_tb);
+endproperty
 
 ////////////////////////////////////////////////////////
 /////////// Applying Stimulus on Inputs //////////////// 

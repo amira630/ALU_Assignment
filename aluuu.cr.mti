@@ -1,0 +1,18 @@
+{E:/Graduation Project/Siemens/ALU_Assignment/alu.v} {1 {vlog -work work -vopt -stats=none {E:/Graduation Project/Siemens/ALU_Assignment/alu.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {E:/Graduation Project/Siemens/ALU_Assignment/alu_pkg.sv} {2 {vlog -work work -vopt -sv -stats=none {E:/Graduation Project/Siemens/ALU_Assignment/alu_pkg.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package alu_pkg
+** Warning: E:/Graduation Project/Siemens/ALU_Assignment/alu_pkg.sv(126): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: E:/Graduation Project/Siemens/ALU_Assignment/alu_pkg.sv(130): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: E:/Graduation Project/Siemens/ALU_Assignment/alu_pkg.sv(136): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+
+Top level modules:
+	--none--
+
+} {} {}}
