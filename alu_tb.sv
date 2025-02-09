@@ -3,7 +3,7 @@ import alu_pkg::*;
 
 `timescale 1ns/1ps
 
-typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R, invalid_1, invalid_2} opcode_e;
+typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
 
 module alu_tb();
 
@@ -11,7 +11,7 @@ module alu_tb();
 ///////////////////// Parameters ////////////////////////
 /////////////////////////////////////////////////////////
 
-parameter CLOCK_PERIOD  = 10;
+parameter CLOCK_PERIOD  = 2;
 
 /////////////////////////////////////////////////////////
 /////////// Testbench Signal Declaration ////////////////
@@ -50,9 +50,12 @@ alu DUT(clk_tb, reset_tb, valid_in_tb, a_tb, b_tb, cin_tb, ctl_tb, valid_out_tb,
 ////////////////// Clock Generator  ////////////////////
 ////////////////////////////////////////////////////////
 
+//q1 inputs = new();//
+
 always #(CLOCK_PERIOD/2) clk_tb = ~clk_tb;
 
 always #(CLOCK_PERIOD/2) clk_g = ~clk_g;
+
 
 ////////////////////////////////////////////////////////
 ////////////////////// Assertions //////////////////////
@@ -62,85 +65,99 @@ property p_SEL;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == SEL |=> (alu_tb == b_tb) && valid_out_tb;
 endproperty
-a_SEL: assert property (p_SEL);
+assert property (p_SEL);
+cover property (p_SEL);
 
 property p_INC;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == INC |=> (alu_tb == (b_tb + 1)) && valid_out_tb;
 endproperty
-a_INC: assert property (p_INC);
+assert property (p_INC);
+cover property (p_INC);
 
 property p_DEC;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == DEC |=> (alu_tb == (b_tb - 1)) && valid_out_tb;
 endproperty
-a_DEC: assert property (p_DEC);
+assert property (p_DEC);
+cover property (p_DEC);
 
 property p_ADD;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == ADD |=> (alu_tb == (a_tb + b_tb)) && valid_out_tb;
 endproperty
-a_ADD: assert property (p_ADD);
+assert property (p_ADD);
+cover property (p_ADD);
 
 property p_ADD_c;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == ADD_c |=> (alu_tb == (a_tb + b_tb + cin_tb)) && valid_out_tb;
 endproperty
-a_ADD_c: assert property (p_ADD_c);
+assert property (p_ADD_c);
+cover property (p_ADD_c);
 
 property p_SUB;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == SUB |=> (alu_tb == (a_tb - b_tb)) && valid_out_tb;
 endproperty
-a_SUB: assert property (p_SUB);
+assert property (p_SUB);
+cover property (p_SUB);
 
 property p_SUB_b;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == SUB_b |=> (alu_tb == (a_tb - b_tb - cin_tb)) && valid_out_tb;
 endproperty
-a_SUB_b: assert property (p_SUB_b);
+assert property (p_SUB_b);
+cover property (p_SUB_b);
 
 property p_AND;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == AND |=> (alu_tb == (a_tb & b_tb)) && valid_out_tb;
 endproperty
-a_AND: assert property (p_AND);
+assert property (p_AND);
+cover property (p_AND);
 
 property p_OR;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == OR |=> (alu_tb == (a_tb | b_tb)) && valid_out_tb;
 endproperty
-a_OR: assert property (p_OR);
+assert property (p_OR);
+cover property (p_OR);
 
 property p_XOR;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == XOR |=> (alu_tb == (a_tb ^ b_tb)) && valid_out_tb;
 endproperty
-a_XOR: assert property (p_XOR);
+assert property (p_XOR);
+cover property (p_XOR);
 
 property p_SHIFT_L;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == SHIFT_L |=> (alu_tb == (a_tb << 1)) && valid_out_tb;
 endproperty
-a_SHIFT_L: assert property (p_SHIFT_L);
+assert property (p_SHIFT_L);
+cover property (p_SHIFT_L);
 
 property p_SHIFT_R;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == SHIFT_R |=> (alu_tb == (a_tb >> 1)) && valid_out_tb;
 endproperty
-a_SHIFT_R: assert property (p_SHIFT_R);
+assert property (p_SHIFT_R);
+cover property (p_SHIFT_R);
 
 property p_ROTATE_L;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == ROTATE_L |=> (alu_tb == {a_tb[2:0], a_tb[3]}) && valid_out_tb;
 endproperty
-a_ROTATE_L: assert property (p_ROTATE_L);
+assert property (p_ROTATE_L);
+cover property (p_ROTATE_L);
 
 property p_ROTATE_R;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb && ctl_tb == ROTATE_R |=> (alu_tb == {a_tb[0], a_tb[3:1]}) && valid_out_tb;
 endproperty
-a_ROTATE_R: assert property (p_ROTATE_R);
+assert property (p_ROTATE_R);
+cover property (p_ROTATE_R);
 
 property p_CARRY;
     @(posedge clk_tb) disable iff (reset_tb)
@@ -150,13 +167,15 @@ property p_CARRY;
                   (a_tb < (b_tb + (ctl_tb == SUB_b ? cin_tb : 0)))) &&
      valid_out_tb);
 endproperty
-a_CARRY: assert property (p_CARRY);
+assert property (p_CARRY);
+cover property (p_CARRY);
 
 property p_ZERO;
     @(posedge clk_tb) disable iff (reset_tb)
     valid_in_tb |=> zero_tb == (alu_tb == 0);
 endproperty
-a_ZERO: assert property (p_ZERO);
+assert property (p_ZERO);
+cover property (p_ZERO);
 
 ////////////////////////////////////////////////////////
 /////////// Applying Stimulus on Inputs //////////////// 
@@ -237,17 +256,8 @@ endtask
 task check_result();
     begin
         @(negedge clk_tb)
-        #1
-		if (alu_tb !== alu_g) begin
-			$display("Incorrect alu!, %t", $time);
-			incorrect_count = incorrect_count +1;
-		end	
-		else if (valid_out_tb !==valid_out_g) begin
-			$display("Incorrect valid_out!, %t", $time);
-			incorrect_count = incorrect_count +1;
-		end	
-		else if (zero_tb !== zero_g) begin
-			$display("Incorrect zero flag!, %t", $time);
+		if (alu_tb !== alu_g || valid_out_tb !==valid_out_g || zero_tb !== zero_g) begin
+			$display("Incorrect Result!, %t", $time);
 			incorrect_count = incorrect_count +1;
 		end	
 		else begin
