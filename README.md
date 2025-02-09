@@ -22,7 +22,7 @@
 </body>
 </html>
 
-1. [Signal Definition](#signal-definition)
+1. [Signals Definition](#signals-definition)
 2. [Verification Environment Architecture](#verification-environment-architecture)
 3. [Wave Diagrams](#wave-diagrams)
 4. [Verification Plan](#verification-plan)
@@ -31,7 +31,7 @@
 7. [Functional Coverage Report](#functional-coverage-report)
 8. [Assertions](#assertions)
 ___
-#### Signal Definition
+#### Signals Definition
 | Name      | Direction | Length | Description |
 | --------  | --------  | ------ | ------ |
 | clk       | input     | 1 bit  | Clock |
