@@ -16,10 +16,10 @@ module alu_ref(
 );
 
 opcode_e opcode;
-wire [4:0] out_r;
-wire valid_r, zero_r;
+reg [4:0] out_r;
+reg valid_r, zero_r;
 
-assign opcode = ctl;
+assign opcode = opcode_e'(ctl);
 
 always @(posedge clk or negedge reset) begin
     if(~reset) begin

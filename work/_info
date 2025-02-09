@@ -1,6 +1,9 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
 !s11f vlog 2021.1 2021.01, Jan 19 2021
 13
 !s112 1.1
@@ -9,25 +12,169 @@ z2
 !i10f 100
 cModel Technology
 dE:/Digital Verification Course- KW/Assignments/Assignment 5
+T_opt
+!s110 1739062426
+VN<d3XNIAf:201AK]_CXAe2
+04 6 4 work alu_tb fast 0
+=1-34735af05edf-67a7fc99-384-2f58
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
 valu
-!s110 1738596570
+Z2 !s110 1739062421
 !i10b 1
 !s100 7enhOG6<CF1kjl;3Y:T?52
-I:0;KShSX:nU5>6iLK;Io71
-dE:/Graduation Project/Siemens
-w1738596468
-8E:/Graduation Project/Siemens/alu.v
-FE:/Graduation Project/Siemens/alu.v
-!i122 0
+IHDe<U7_QI=4z7Z;7mIljP2
+Z3 dD:/EECE2025/GP/Verification/ALU/ALU_Assignment
+w1739022980
+8alu.v
+Falu.v
+!i122 15
 L0 1 79
-VDg1SIo80bB@j0V0VzS_@n1
-OL;L;2021.1;73
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
 r1
 !s85 0
 31
-!s108 1738596569.000000
-!s107 E:/Graduation Project/Siemens/alu.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/Graduation Project/Siemens/alu.v|
+Z6 !s108 1739062421.000000
+Z7 !s107 alu_tb.sv|alu_pkg.sv|alu_ref.sv|alu.v|
+Z8 !s90 -reportprogress|300|alu.v|alu_ref.sv|alu_pkg.sv|alu_tb.sv|+cover|-covercells|
 !i113 0
-o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-tCvgOpt 0
+Z9 !s102 +cover -covercells
+Z10 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Xalu_pkg
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 VYPfC7A=VnY:jRL;ZTT090
+Ikh:^8^0dPIHd77G;`I9^c1
+S1
+R3
+w1739057299
+8alu_pkg.sv
+Falu_pkg.sv
+!i122 15
+Z12 L0 1 0
+Vkh:^8^0dPIHd77G;`I9^c1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+valu_ref
+R11
+DXx4 work 15 alu_ref_sv_unit 0 22 mNEO[Y_QIhgTm5zj`[LIH2
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 SgQNHU6Gi1<KZJ0nP0fab0
+I4XGN^O6ggi>0?6Y@Toe2b3
+!s105 alu_ref_sv_unit
+S1
+R3
+Z13 w1739060638
+Z14 8alu_ref.sv
+Z15 Falu_ref.sv
+!i122 15
+L0 3 63
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+Xalu_ref_sv_unit
+R11
+R2
+VmNEO[Y_QIhgTm5zj`[LIH2
+r1
+!s85 0
+!i10b 1
+!s100 oaSS^iPTZ02j69z:]VG[J2
+ImNEO[Y_QIhgTm5zj`[LIH2
+!i103 1
+S1
+R3
+R13
+R14
+R15
+!i122 15
+R12
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+valu_tb
+R11
+Z16 DXx4 work 7 alu_pkg 0 22 kh:^8^0dPIHd77G;`I9^c1
+DXx4 work 14 alu_tb_sv_unit 0 22 haFIkH^im`KjVZ_3_C4nR1
+Z17 !s110 1739062422
+R4
+r1
+!s85 0
+!i10b 1
+!s100 QDIG5M]nhYbYFoM4D_HD<3
+IMf9A7eQ=z6?bM[c_RY_FW1
+!s105 alu_tb_sv_unit
+S1
+R3
+Z18 w1739062409
+Z19 8alu_tb.sv
+Z20 Falu_tb.sv
+!i122 15
+L0 8 250
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+Xalu_tb_sv_unit
+R11
+R16
+R17
+VhaFIkH^im`KjVZ_3_C4nR1
+r1
+!s85 0
+!i10b 1
+!s100 FHAVOS@eod=fbKU_bRiId2
+IhaFIkH^im`KjVZ_3_C4nR1
+!i103 1
+S1
+R3
+R18
+R19
+R20
+!i122 15
+L0 2 0
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1

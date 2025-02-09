@@ -1,4 +1,6 @@
 //import Q1::*;//
+import alu_pkg::*;
+
 `timescale 1ns/1ps
 
 typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHIFT_L, SHIFT_R, ROTATE_L, ROTATE_R} opcode_e;
@@ -23,14 +25,20 @@ logic       clk_g, reset_g, valid_in_g, cin_g, valid_out_g, carry_g, zero_g;
 logic [3:0] a_g, b_g, ctl_g, alu_g;  
 opcode_e    opcode_g;
 
-assign opcode_tb = ctl_tb;
-assign opcode_g  = ctl_g;
+assign opcode_tb = opcode_e'(ctl_tb);
+assign opcode_g  = opcode_e'(ctl_g);
 
 ////////////////////////////////////////////////////////
 ////////////////////// Counters ////////////////////////
 ////////////////////////////////////////////////////////
 
 integer correct_count, incorrect_count;
+
+////////////////////////////////////////////////////////
+////////////////////// Random Signals //////////////////
+////////////////////////////////////////////////////////
+
+random_class RC;
 
 ////////////////////////////////////////////////////////
 /////////////////// DUT Instantation ///////////////////
@@ -158,10 +166,38 @@ a_ZERO: assert property (p_ZERO);
 ////////////////////////////////////////////////////////
 
 initial begin
+    RC = new();
     initialize();
-    for (int i = 0; i < 1200; i++) begin
-        
+    
+    // Random check
+    repeat(300) begin
+        assert (RC.randomize());
+        reset_tb = RC.rst;
+        reset_g = RC.rst;
+        valid_in_tb = RC.valid_in;
+        valid_in_g = RC.valid_in;
+        cin_tb = RC.cin;
+        cin_g = RC.cin;
+        a_tb = RC.a;
+        a_g = RC.a;
+        b_tb = RC.b;
+        b_g = RC.b;
+        ctl_tb = RC.ctl;
+        ctl_g = RC.ctl;
+
+        RC.carry = carry_tb;
+        RC.zero = zero_tb;
+        RC.valid_out = valid_out_tb;
+        RC.alu = alu_tb;
+
+        RC.alu_cvr.sample();
+        check_result();
+
     end
+
+    $display("total number of errors = %d , total numbers of correct  = %d", incorrect_count, correct_count);
+    #5
+    $stop;
 end
 
 ////////////////////////////////////////////////////////
@@ -177,7 +213,7 @@ task initialize;
         cin_tb = 1'b0;      cin_g = 1'b0;
         a_tb = 4'b0;        a_g = 4'b0;
         b_tb = 4'b0;        b_g = 4'b0;
-        ctl_tb = 4'b0;      ctl_g = 4'b0;
+        ctl_tb = opcode_e'(4'b0000);      ctl_g = opcode_e'(4'b0000);
 
         correct_count = 32'b0; 
         incorrect_count = 32'b0;

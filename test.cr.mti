@@ -1,16 +1,24 @@
-{E:/Graduation Project/Siemens/alu.v} {1 {vlog -work work -vopt -stats=none {E:/Graduation Project/Siemens/alu.v}
+D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv {2 {vlog -work work -vopt -sv -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+** Warning: D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_ref.sv(1): (vlog-13233) Design unit "alu_ref_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+-- Compiling package alu_ref_sv_unit
+-- Compiling module alu_ref
+
+Top level modules:
+	alu_ref
+
+} {} {}} D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_pkg.sv {1 {vlog -work work -vopt -sv -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu_pkg.sv
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package alu_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu.v {1 {vlog -work work -vopt -stats=none D:/EECE2025/GP/Verification/ALU/ALU_Assignment/alu.v
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 -- Compiling module alu
 
 Top level modules:
 	alu
 
-} {} {}} {E:/Graduation Project/Siemens/alu.vp} {0 {vlog -work work -vopt -stats=none {E:/Graduation Project/Siemens/alu.vp}
-QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling module alu
-** Error: (vlog-13069) E:/Graduation Project/Siemens/alu.vp(38): syntax error in protected region.
-
-** Error: (vlog-13036) E:/Graduation Project/Siemens/alu.vp(38): syntax error in protected region.
-
-
-} {4.0 5.0 6.0 7.0} {}}
+} {} {}}
