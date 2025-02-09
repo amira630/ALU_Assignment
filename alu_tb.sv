@@ -11,7 +11,7 @@ module alu_tb();
 ///////////////////// Parameters ////////////////////////
 /////////////////////////////////////////////////////////
 
-parameter CLOCK_PERIOD  = 2;
+parameter CLOCK_PERIOD  = 10;
 
 /////////////////////////////////////////////////////////
 /////////// Testbench Signal Declaration ////////////////
@@ -240,8 +240,17 @@ endtask
 task check_result();
     begin
         @(negedge clk_tb)
-		if (alu_tb !== alu_g || valid_out_tb !==valid_out_g || zero_tb !== zero_g) begin
-			$display("Incorrect Result!, %t", $time);
+        #1
+		if (alu_tb !== alu_g) begin
+			$display("Incorrect alu!, %t", $time);
+			incorrect_count = incorrect_count +1;
+		end	
+		else if (valid_out_tb !==valid_out_g) begin
+			$display("Incorrect valid_out!, %t", $time);
+			incorrect_count = incorrect_count +1;
+		end	
+		else if (zero_tb !== zero_g) begin
+			$display("Incorrect zero flag!, %t", $time);
 			incorrect_count = incorrect_count +1;
 		end	
 		else begin

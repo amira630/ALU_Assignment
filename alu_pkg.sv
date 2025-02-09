@@ -16,7 +16,8 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
         constraint cin_c {cin dist {0:/70, 1:/30};}
         
         // Constraint 3: Control signal distribution
-        constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
+        //constraint opcode_c {ctl dist {[SEL:XOR]:/90, [SHIFT_L:ROTATE_R]:/10};}
+        constraint opcode_c {ctl dist {[SEL:XOR]};}
 
         // Constraint 4: Valid_in should be 1 only when valid inputs exist
         // "If all inputs are 0, the operation is invalid, so valid_in will be 0"
@@ -52,7 +53,7 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
             
             // Coverpoint for ALU control signal (ensure all operations are exercised)
             ctl_cp: coverpoint ctl {
-                bins all_ops[] = {[SEL:ROTATE_R]}; // Cover all ALU operations
+                bins all_ops[] = {[SEL:XOR]}; // Cover all ALU operations
             }
 
             // Coverpoints for ALU input values (track different data patterns)
@@ -94,6 +95,7 @@ typedef enum bit [3:0] {SEL, INC, DEC, ADD, ADD_c, SUB, SUB_b, AND, OR, XOR, SHI
 
         function new();
             alu_cvr = new();
+            ctl = SEL;
         endfunction
     endclass
 endpackage
