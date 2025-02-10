@@ -183,7 +183,7 @@ ___
 |:--:|
 | *Figure 13: Statement Coverage* |
 #### Branch Coverage
-| ![branch](./Pictures/branch.png) |
+| ![branch](./Pictures/Branch.png) |
 |:--:|
 | *Figure 14: Branch Coverage* |
 #### Toggle Coverage
