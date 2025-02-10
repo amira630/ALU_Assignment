@@ -22,16 +22,27 @@
 </body>
 </html>
 
-1. [Signals Definition](#signals-definition)
-2. [Verification Environment Architecture](#verification-environment-architecture)
-3. [Wave Diagrams](#wave-diagrams)
-4. [Verification Plan](#verification-plan)
-5. [QuestaSim Waveforms](#questasim-waveforms)
-6. [Code Coverage Report](#code-coverage-report)
-7. [Functional Coverage Report](#functional-coverage-report)
-8. [Assertions](#assertions)
+1. [**Signals Definition**](#signals-definition)
+2. [**ALU Operations**](#alu-operations)
+3. [**Verification Environment Architecture**](#verification-environment-architecture)
+4. [**Wave Diagrams**](#wave-diagrams)
+5. [**Verification Plan**](#verification-plan)
+6. [**QuestaSim Transcript Output**](#questasim-transcript-output)
+7. [**QuestaSim Waveforms and Discovered Bugs**](#questasim-waveforms-and-discovered-bugs)
+8. [Bug 1 (SUB Operation):](#bug-1-sub-operation)
+9. [Bug 2 (SUB w/ Borrow Operation):](#bug-2-sub-w-borrow-operation)
+10. [Bug 3 (SEL Operation):](#bug-3-sel-operation)
+11. [Bug 4 (Valid out value in case of XOR  Operation):](#bug-4-valid-out-value-in-case-of-xor--operation)
+12. [Bug 5 (INVALID Operations):](#bug-5-invalid-operations)
+13. [Bug 6 (Zero Flag Value):](#bug-6-zero-flag-value)
+14. [**Code Coverage Report**](#code-coverage-report)
+15. [Statement Coverage](#statement-coverage)
+16. [Branch Coverage](#branch-coverage)
+17. [Toggle Coverage](#toggle-coverage)
+18. [**Functional Coverage Report**](#functional-coverage-report)
+19. [**Assertions and Cover Directives**](#assertions-and-cover-directives)
 ___
-#### Signals Definition
+#### **Signals Definition**
 | Name      | Direction | Length | Description |
 | --------  | --------  | ------ | ------ |
 | clk       | input     | 1 bit  | Clock |
@@ -47,23 +58,31 @@ ___
 | zero      | output    | 1 bit  |  zero flag output |
 ___
 
-#### Verification Environment Architecture
-![Alt text](ALU_Verf_Archi.drawio.png)
+#### **ALU Operations**
+| ![Alt text](ALU_operations.jpg) |
+|:--:|
+| *Figure 1: ALU Operations* |
 ___
 
-#### Wave Diagrams
+#### **Verification Environment Architecture**
+| ![Alt text](ALU_Verf_Archi.drawio.png) |
+|:--:|
+| *Figure 2: Verification Arichitecture* |
+___
+
+#### **Wave Diagrams**
 | ![Reset effect](reset.png) |
 |:--:|
-| *Figure 1: Reset* |
+| *Figure 3: Reset* |
 
 | ![Valid_in effect](validin.png) |
 |:--:|
-| *Figure 2: Valid_in* |
+| *Figure 4: Valid_in* |
 
 
 
 ___
-#### Verification Plan
+#### **Verification Plan**
 | Label           | Description                                                                                                                                      | Stimulus Generation                                                                                                                                            | Functional Coverage                                                                                                                        | Functionality Check                                           |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | ALU_1           | When the reset is deasserted, the outputs values should be low.                                                                                  | Directed at the start of the simulation, then randomized with constraint that drive the reset to be off(high) most of the simulation time.                     | -                                                                                                                                          | A checker in the testbench to make sure the output is correct |
@@ -83,14 +102,75 @@ ___
 | Reference model | when the randomized inputs enter it, the output should be accurately equal to correct output of the design                                       | Randomization                                                                                                                                                  | -                                                                                                                                          | Output Checked against reference model.                       |
 | Check Result    | when the expected values from the golden model are not equal to the outputs of the DUT, the error_count increased, else correct_count increased. | Randomization                                                                                                                                                  | -                                                                                                                                          | Output Checked against reference model.                       |                                            
 ___
-#### QuestaSim Waveforms
+#### **QuestaSim Transcript Output**
+| ![transcript](transcript.png) |
+|:--:|
+| *Figure 4: Transcript* |
 ___
-####  Code Coverage Report
-<!-- | File Name | Line Coverage | Branch Coverage | Condition Coverage | Toggle Coverage | Decision Coverage | MC
-|-----------|---------------|----------------|---------------------|----------------|------------------|-----|
-| alu.sv    | 100%          | 100%           | 100%  -->
+#### **QuestaSim Waveforms and Discovered Bugs**
+#### Bug 1 (SUB Operation):
+- We can see that when the SUB operation is performed between 11 and 5 as highlighted below, the golden module produces the correct result which is 6 while the ALU produces an incorrect result which is 7.
+  
+| ![Sub_bug](Sub_bug.png) |
+|:--:|
+| *Figure 4: Waveform Snippet 1* |
 ___
-####  Functional Coverage Report
+#### Bug 2 (SUB w/ Borrow Operation):
+-We can see that when the SUB with borrow operation is performed between 15 and 9 with cin = 0 as highlighted below, the golden module produces the correct result which is 6 while the ALU produces an incorrect result which is 5.
+| ![Sub_b_bug](Sub_b_bug.png) |
+|:--:|
+| *Figure 4: Waveform Snippet 2* |
 ___
-#### Assertions
+#### Bug 3 (SEL Operation):
+-We can see that when the SEL operation is performed with b = 10 as highlighted below, the golden module produces the correct result which is 10 (selects the value of b) while the ALU produces an incorrect result which is 7 (selects the value of a).
+| ![SEL_bug](SEL_bug.png) |
+|:--:|
+| *Figure 4: Waveform Snippet 3* |
+___
+#### Bug 4 (Valid out value in case of XOR  Operation):
+- We can see that when the XOR operation is performed with a = 14 and b = 15 as highlighted below, BOTH the ALU and the golden module produce the correct result which is 1, however the value of the valid out in the ALU is 0 which is incorrect while the value of the valid out in the golden module is 1 which is correct.
+  
+| ![Valid_out_bug](Valid_out_bug.png) |
+|:--:|
+| *Figure 4: Waveform Snippet 4* |
+___
+#### Bug 5 (INVALID Operations):
+| ![INVALID_ops](INVALID_ops.png) |
+|:--:|
+| *Figure 4: Waveform Snippet 5* |
+___
+#### Bug 6 (Zero Flag Value):
+
+___
+####  **Code Coverage Report**
+#### Statement Coverage
+![statement1](statement1.png)
+| ![statement2](statement2.png) |
+|:--:|
+| *Figure 4: Statement Coverage* |
+#### Branch Coverage
+| ![branch](branch.png) |
+|:--:|
+| *Figure 4: Branch Coverage* |
+#### Toggle Coverage
+| ![toggle](toggle.png) |
+|:--:|
+| *Figure 4: Toggle Coverage* |
+___
+####  **Functional Coverage Report**
+![Functional Coverage_1](func_cov1.png)
+![Functional Coverage_2](func_cov2.png)
+![Functional Coverage_3](func_cov3.png)
+| ![Functional Coverage_4](func_cov4.png) |
+|:--:|
+| *Figure 4: Functional Coverage Report* |
+___
+#### **Assertions and Cover Directives**
+| ![Assertions](Assertions.png) |
+|:--:|
+| *Figure 4: Assertions* |
+
+| ![Cover_directives](Cover_directives.png) |
+|:--:|
+| *Figure 4: Cover Directives* |
 ___
