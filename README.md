@@ -42,8 +42,9 @@
     <p>Two files are included:</p>
     <ul>
       <li><b>ALU_1</b>: Verifies the ALU design in one testbench file.</li>
-      <li><b>ALU_2</b>: Contains the testbench done using the SV Architecture.</li>
-    </ul>
+      <li><b>ALU_2</b>: Contains a preliminary testbench done using the SV Architecture.</li>
+      <li><b>ALU_3</b>: Contains a full testbench done using the SV Architecture and the mailbox built-in class.</li>
+    </ul> 
   </div>
 
   <h4>Table of Contents</h4>
