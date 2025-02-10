@@ -2,23 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=devicSir"> 
   <title>ALU Verification Assignment</title>
   <style>
     h1 {
       border-bottom: none;
     }
+
+    /* Notes Section Styling */
+    .note {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-left: 4px solid #007bff;
+      margin: 15px 0;
+    }
+
+    .note ul {
+      margin-top: 5px;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
 
-<img src="siemens_eda_logo.jpg" alt="Description" width="100" style="float: right; margin-left: 10px;">
+  <img src="./Pictures/siemens_eda_logo.jpg" alt="Description" width="100" style="float: right; margin-left: 10px;">
 
-<h1>ALU Verification Assignment</h1>
-<h3>Submitted to: Eng. Nour ElDeen ElHout</h3>
-<h4>By: Amira Atef, Aya El Desouky and Mohamed Ayman</h4>
-<hr>
-<h4>Table of Contents</h4>
+  <h1>ALU Verification Assignment</h1>
+  <h3>Submitted to: Eng. Nour ElDeen ElHout</h3>
+  <h4>By: Amira Atef, Aya El Desouky and Mohamed Ayman</h4>
+  <hr>
+
+  <!-- Notes Section -->
+  <div class="note">
+    <strong><em>Note</em></strong>
+    <p>This repo doesn't verify the shift and rotate operations due to the purpose of their exact functions being unclear.</p>
+    <p>Two files are included:</p>
+    <ul>
+      <li><b>ALU_1</b>: Verifies the ALU design in one testbench file.</li>
+      <li><b>ALU_2</b>: Contains the testbench done using the SV Architecture.</li>
+    </ul>
+  </div>
+
+  <h4>Table of Contents</h4>
+
 </body>
 </html>
 
@@ -59,27 +88,29 @@ ___
 ___
 
 #### **ALU Operations**
-| ![Alt text](ALU_operations.jpg) |
+| ![Alt text](./Pictures/ALU_operations.jpg) |
 |:--:|
 | *Figure 1: ALU Operations* |
 ___
 
 #### **Verification Environment Architecture**
-| ![Alt text](ALU_Verf_Archi.drawio.png) |
+| ![Alt text](./Pictures/ALU_Verf_Archi.drawio.png) |
 |:--:|
 | *Figure 2: Verification Arichitecture* |
 ___
 
 #### **Wave Diagrams**
-| ![Reset effect](reset.png) |
+| ![Reset effect](./Pictures/reset.png) |
 |:--:|
 | *Figure 3: Reset* |
 
-| ![Valid_in effect](validin.png) |
+| ![Valid_in effect](./Pictures/valid_in.png) |
 |:--:|
 | *Figure 4: Valid_in* |
 
-
+| ![ALU Opcodes](./Pictures/ALU_ops.png) |
+|:--:|
+| *Figure 5: ALU Operations* |
 
 ___
 #### **Verification Plan**
@@ -103,74 +134,74 @@ ___
 | Check Result    | when the expected values from the golden model are not equal to the outputs of the DUT, the error_count increased, else correct_count increased. | Randomization                                                                                                                                                  | -                                                                                                                                          | Output Checked against reference model.                       |                                            
 ___
 #### **QuestaSim Transcript Output**
-| ![transcript](transcript.png) |
+| ![transcript](./Pictures/transcript.png) |
 |:--:|
-| *Figure 4: Transcript* |
+| *Figure 6: Transcript* |
 ___
 #### **QuestaSim Waveforms and Discovered Bugs**
 #### Bug 1 (SUB Operation):
 - We can see that when the SUB operation is performed between 11 and 5 as highlighted below, the golden module produces the correct result which is 6 while the ALU produces an incorrect result which is 7.
   
-| ![Sub_bug](Sub_bug.png) |
+| ![Sub_bug](./Pictures/Sub_bug.png) |
 |:--:|
-| *Figure 4: Waveform Snippet 1* |
+| *Figure 7: Waveform Snippet 1* |
 ___
 #### Bug 2 (SUB w/ Borrow Operation):
 -We can see that when the SUB with borrow operation is performed between 15 and 9 with cin = 0 as highlighted below, the golden module produces the correct result which is 6 while the ALU produces an incorrect result which is 5.
-| ![Sub_b_bug](Sub_b_bug.png) |
+| ![Sub_b_bug](./Pictures/Sub_b_bug.png) |
 |:--:|
-| *Figure 4: Waveform Snippet 2* |
+| *Figure 8: Waveform Snippet 2* |
 ___
 #### Bug 3 (SEL Operation):
 -We can see that when the SEL operation is performed with b = 10 as highlighted below, the golden module produces the correct result which is 10 (selects the value of b) while the ALU produces an incorrect result which is 7 (selects the value of a).
-| ![SEL_bug](SEL_bug.png) |
+| ![SEL_bug](./Pictures/SEL_bug.png) |
 |:--:|
-| *Figure 4: Waveform Snippet 3* |
+| *Figure 9: Waveform Snippet 3* |
 ___
 #### Bug 4 (Valid out value in case of XOR  Operation):
 - We can see that when the XOR operation is performed with a = 14 and b = 15 as highlighted below, BOTH the ALU and the golden module produce the correct result which is 1, however the value of the valid out in the ALU is 0 which is incorrect while the value of the valid out in the golden module is 1 which is correct.
   
-| ![Valid_out_bug](Valid_out_bug.png) |
+| ![Valid_out_bug](./Pictures/Valid_out_bug.png) |
 |:--:|
-| *Figure 4: Waveform Snippet 4* |
+| *Figure 10: Waveform Snippet 4* |
 ___
 #### Bug 5 (INVALID Operations):
-| ![INVALID_ops](INVALID_ops.png) |
+| ![INVALID_ops](./Pictures/INVALID_ops.png) |
 |:--:|
-| *Figure 4: Waveform Snippet 5* |
+| *Figure 11: Waveform Snippet 5* |
 ___
 #### Bug 6 (Zero Flag Value):
 
 ___
 ####  **Code Coverage Report**
 #### Statement Coverage
-![statement1](statement1.png)
-| ![statement2](statement2.png) |
+![statement1](./Pictures/statement1.png)
+| ![statement2](./Pictures/statement2.png) |
 |:--:|
-| *Figure 4: Statement Coverage* |
+| *Figure 12: Statement Coverage* |
 #### Branch Coverage
-| ![branch](branch.png) |
+| ![branch](./Pictures/branch.png) |
 |:--:|
-| *Figure 4: Branch Coverage* |
+| *Figure 13: Branch Coverage* |
 #### Toggle Coverage
-| ![toggle](toggle.png) |
+| ![toggle](./Pictures/toggle.png) |
 |:--:|
-| *Figure 4: Toggle Coverage* |
+| *Figure 14: Toggle Coverage* |
 ___
 ####  **Functional Coverage Report**
-![Functional Coverage_1](func_cov1.png)
-![Functional Coverage_2](func_cov2.png)
-![Functional Coverage_3](func_cov3.png)
-| ![Functional Coverage_4](func_cov4.png) |
+![Functional Coverage_1](./Pictures/func_cov1.png)
+![Functional Coverage_2](./Pictures/func_cov2.png)
+![Functional Coverage_3](./Pictures/func_cov3.png)
+| ![Functional Coverage_4](./Pictures/func_cov4.png) |
 |:--:|
-| *Figure 4: Functional Coverage Report* |
+| *Figure 15: Functional Coverage Report* |
 ___
 #### **Assertions and Cover Directives**
-| ![Assertions](Assertions.png) |
+| ![Assertions](./Pictures/Assertions.png) |
 |:--:|
-| *Figure 4: Assertions* |
+| *Figure 16: Assertions* |
 
-| ![Cover_directives](Cover_directives.png) |
+| ![Cover_directives](./Pictures/Cover_directives.png) |
 |:--:|
-| *Figure 4: Cover Directives* |
+| *Figure 17: Cover Directives* |
 ___
