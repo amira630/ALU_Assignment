@@ -171,22 +171,24 @@ ___
 | *Figure 11: Waveform Snippet 5* |
 ___
 #### Bug 6 (Zero Flag Value):
-
+| ![zero_bug](./Pictures/zero_bug.png) |
+|:--:|
+| *Figure 12: Waveform Snippet 6* |
 ___
 ####  **Code Coverage Report**
 #### Statement Coverage
 ![statement1](./Pictures/statement1.png)
 | ![statement2](./Pictures/statement2.png) |
 |:--:|
-| *Figure 12: Statement Coverage* |
+| *Figure 13: Statement Coverage* |
 #### Branch Coverage
 | ![branch](./Pictures/branch.png) |
 |:--:|
-| *Figure 13: Branch Coverage* |
+| *Figure 14: Branch Coverage* |
 #### Toggle Coverage
 | ![toggle](./Pictures/toggle.png) |
 |:--:|
-| *Figure 14: Toggle Coverage* |
+| *Figure 15: Toggle Coverage* |
 ___
 ####  **Functional Coverage Report**
 ![Functional Coverage_1](./Pictures/func_cov1.png)
@@ -194,14 +196,14 @@ ___
 ![Functional Coverage_3](./Pictures/func_cov3.png)
 | ![Functional Coverage_4](./Pictures/func_cov4.png) |
 |:--:|
-| *Figure 15: Functional Coverage Report* |
+| *Figure 16: Functional Coverage Report* |
 ___
 #### **Assertions and Cover Directives**
 | ![Assertions](./Pictures/Assertions.png) |
 |:--:|
-| *Figure 16: Assertions* |
+| *Figure 17: Assertions* |
 
 | ![Cover_directives](./Pictures/Cover_directives.png) |
 |:--:|
-| *Figure 17: Cover Directives* |
+| *Figure 18: Cover Directives* |
 ___

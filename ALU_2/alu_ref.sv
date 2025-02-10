@@ -82,7 +82,7 @@ always @(*) begin
         ROTATE_R: out_r = {out_r[0], out_r[4:1]};
         default:  valid_r = 1'b0;
     endcase
-    if (~&out_r[3:0]) 
+    if (~|out_r[3:0]) 
         zero_r = 1'b1;
     else
         zero_r = 1'b0;
