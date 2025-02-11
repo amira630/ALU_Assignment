@@ -9,7 +9,7 @@ package alu_env_pkg;
 
         int num_transactions;
 
-        function new(virtual alu_interface vif, int num_transactions = 300);
+        function new(virtual alu_interface vif, int num_transactions = 200);
             this.vif = vif;
             this.num_transactions = num_transactions; 
             agent = new(vif, num_transactions); // Pass vif and drv_mbx to agent

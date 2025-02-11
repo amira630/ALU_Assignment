@@ -32,16 +32,24 @@ assign intf.ctl      = ctl;
 alu_transaction tr_tb;
 alu_environment env;
 
-int num_transactions = 300;
+int num_transactions = 1000;
+event test_done;
 
 initial begin
+    test_finshed = 0;
     tr_tb = new();
     initialize();
     
     env = new(intf, num_transactions);
     env.run();
     
-    wait(test_finshed);
+    // Wait for all transactions to complete
+    repeat(num_transactions + 10) @(posedge clk);
+
+    test_finshed = 1;
+    -> test_done;
+
+    @(test_done);
     $display("Simulation ended at time %0t", $time);
     $display("Total correct cases: %0d", correct_count);
     $display("Total incorrect cases: %0d", incorrect_count);

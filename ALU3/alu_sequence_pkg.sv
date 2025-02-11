@@ -7,7 +7,7 @@ package alu_sequence_pkg;
         int num_transactions;
         alu_transaction tr;
 
-        function new(mailbox #(alu_transaction) seq_mbx, int num_transactions = 300);
+        function new(mailbox #(alu_transaction) seq_mbx, int num_transactions = 200);
             this.seq_mbx = seq_mbx;
             this.num_transactions = num_transactions;
             tr = new();
